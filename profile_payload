@@ -1,0 +1,13 @@
+./ffmpeg -i '/opt/fprofile/harry.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
+./ffmpeg -i '/opt/fprofile/harry2.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
+./ffmpeg -i '/opt/fprofile/eyes.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
+./ffmpeg -i '/opt/fprofile/allied.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
+./ffmpeg -i '/opt/fprofile/gerra.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
+timeout 16 ./ffplay -autoexit -t 00:00:14 -i '/opt/TDEP/downloads/rips/pp/Slim4K - Passionate FFM three-way fuck scene/slim4k-passionate-ffm-three-way-fuck-scene_1080p.mp4' -vcodec h264_cuvid
+timeout 16 ./ffplay -autoexit -t 00:00:14 -i '/opt/TDEP/downloads/rips/pp/Slim4K - Passionate FFM three-way fuck scene/slim4k-passionate-ffm-three-way-fuck-scene_1080p.mp4'
+timeout 16 ./ffplay -autoexit -t 00:00:14 -i '/opt/TDEP/stuff/videos/movies/Mad Max Fury Road 2015 UltraHD BluRay 2160p HEVC BT2020 TrueHD 7 1 Atmos-HDLeader/Mad.Max.Fury.Road.2015.UltraHD.BluRay.2160p.HEVC.BT2020.TrueHD 7.1.Atmos-HDLeader.mkv'
+timeout 16 ./ffplay -autoexit -ss 01:00:00 -t 00:00:14 -i '/opt/TDEP/stuff/videos/movies/Midsommar.2019.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTG.mkv'
+timeout 16 ./ffplay -autoexit -ss 01:00:00 -t 00:00:14 -i '/opt/TDEP/stuff/videos/movies/Midsommar.2019.1080p.AMZN.WEB-DL.DDP5.1.H.264-NTG.mkv' -vcodec h264_cuvid
+timeout 16 ./ffplay -autoexit -ss 00:40:00 -t 00:00:14 -i '/opt/TDEP/stuff/videos/movies/Parasite.Gisaengchung.2019.1080p.BluRay.FLAC.x264-BeiTai.mkv'
+timeout 16 ./ffplay -autoexit -ss 00:40:00 -t 00:00:14 -i '/opt/TDEP/stuff/videos/movies/Parasite.Gisaengchung.2019.1080p.BluRay.FLAC.x264-BeiTai.mkv' -vcodec h264_cuvid
+# xvfb-run --server-args="-screen 0 1920x1080x24+32"

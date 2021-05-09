@@ -1,0 +1,1 @@
+echo 'include $(SRC_PATH)/ffbuild/libffmpeg.mak' >> Makefile
