@@ -13,6 +13,9 @@
 # numactl-dev
 # numactl-staticdev
 # gnutls-staticdev
+# libffado
+# libffado-dev
+# libffado-python3
 acl
 acl-dev
 acl-staticdev
@@ -53,9 +56,6 @@ freetype-staticdev
 fribidi-dev
 fribidi-staticdev
 gcc
-gcc9
-gcc9-dev
-gcc9-libs-math
 gcc-dev
 gcc-libs-math
 glib
@@ -77,6 +77,9 @@ graphite-staticdev
 gsm-dev
 gsm-staticdev
 gtk3-lib
+gtk4
+gtk4-dev
+gtk4-lib
 gtk+-data
 gtk+-lib
 harfbuzz-dev
@@ -124,9 +127,7 @@ libepoxy-dev
 libepoxy-staticdev
 libfdk_aac-dev
 libfdk_aac-staticdev
-libffado
-libffado-dev
-libffado-python3
+
 libffi-dev
 libffi-staticdev
 libidn2
