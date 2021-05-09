@@ -16,6 +16,8 @@
 # libffado
 # libffado-dev
 # libffado-python3
+# libvidstab-dev
+# libvidstab-staticdev
 acl
 acl-dev
 acl-staticdev
@@ -127,7 +129,6 @@ libepoxy-dev
 libepoxy-staticdev
 libfdk_aac-dev
 libfdk_aac-staticdev
-
 libffi-dev
 libffi-staticdev
 libidn2
@@ -181,8 +182,7 @@ libvapoursynth-python3
 libvapoursynth-staticdev
 libvdpau
 libvdpau-dev
-libvidstab-dev
-libvidstab-staticdev
+
 libvorbis
 libvorbis-dev
 libvorbis-staticdev
