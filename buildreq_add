@@ -169,9 +169,6 @@ libunistring-dev
 libunistring-staticdev
 libunwind
 libunwind-dev
-libunwind-dev32
-libunwind-staticdev
-libunwind-staticdev32
 libva
 libva-dev
 libva-lib
@@ -247,9 +244,9 @@ mesa
 mesa-dev
 mesa-lib
 mm-common-dev
-moonjit
-moonjit-dev
-moonjit-staticdev
+LuaJIT
+LuaJIT-dev
+LuaJIT-staticdev
 nasm
 nasm-bin
 nettle
