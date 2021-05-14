@@ -112,8 +112,8 @@ libbluray-staticdev
 libcap-ng-dev
 libconfig-dev
 libconfig-staticdev
-libdav1d-dev
-libdav1d-staticdev
+dav1d-dev
+dav1d-staticdev
 libdrm
 libdrm-dev
 libdrm-lib
