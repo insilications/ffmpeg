@@ -51,6 +51,7 @@
     --enable-lzo \
     --enable-ffmpeg \
     --enable-ffnvcodec \
+    --enable-programs \
     --enable-ffplay \
     --enable-gmp \
     --enable-ladspa \
