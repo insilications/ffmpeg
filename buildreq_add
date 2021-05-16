@@ -40,6 +40,8 @@ ccache
 cuda
 cuda-dev
 cuda-staticdev
+dav1d-dev
+dav1d-staticdev
 dbus-dev
 evtest
 expat-dev
@@ -112,8 +114,6 @@ libbluray-staticdev
 libcap-ng-dev
 libconfig-dev
 libconfig-staticdev
-dav1d-dev
-dav1d-staticdev
 libdrm
 libdrm-dev
 libdrm-lib
@@ -230,6 +230,9 @@ libzimg-staticdev
 llvm-lib
 l-smash-dev
 l-smash-staticdev
+LuaJIT
+LuaJIT-dev
+LuaJIT-staticdev
 lz4
 lz4-dev
 lz4-staticdev
@@ -244,9 +247,6 @@ mesa
 mesa-dev
 mesa-lib
 mm-common-dev
-LuaJIT
-LuaJIT-dev
-LuaJIT-staticdev
 nasm
 nasm-bin
 nettle
@@ -311,6 +311,7 @@ pulseaudio-dev
 python3-core
 python3-dev
 python3-staticdev
+rsync
 rtmpdump
 rtmpdump-dev
 rtmpdump-staticdev
