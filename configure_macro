@@ -12,7 +12,6 @@
     --disable-mmxext \
     --disable-podpages \
     --disable-stripping \
-    --disable-alsa \
     --disable-gnutls \
     --disable-runtime-cpudetect \
     --cpu=native \
@@ -56,6 +55,8 @@
     --enable-programs \
     --enable-ffplay \
     --enable-gmp \
+    --enable-avisynth \
+    --enable-alsa \
     --enable-ladspa \
     --enable-libaom \
     --enable-libass \
