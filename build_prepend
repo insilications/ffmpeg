@@ -1,4 +1,0 @@
-#find . -type f -name 'configure' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-#find . -type f -name 'Makefile' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-#find . -type f -name '*.mak' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-#find . -type f -name '*.js' -exec js-beautify --replace {} \;
