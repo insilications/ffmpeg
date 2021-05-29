@@ -255,9 +255,6 @@ nettle-staticdev
 numlockx
 nv-codec-headers
 nv-codec-headers-dev
-nvidia
-nvidia-dev
-nvidia-lib
 opencl-headers
 opencl-headers-dev
 openjpeg-dev
