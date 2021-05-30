@@ -37,9 +37,6 @@ cairo
 cairo-dev
 cairo-lib
 ccache
-cuda
-cuda-dev
-cuda-staticdev
 dav1d-dev
 dav1d-staticdev
 dbus-dev
