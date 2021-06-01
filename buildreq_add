@@ -98,9 +98,6 @@ gcc-libs-math
 gcc-libstdc++32
 gcc-libubsan
 gcc-locale
-gdal
-gdal-dev
-gdal-staticdev
 gdb
 gdb-dev
 gettext
@@ -139,15 +136,10 @@ gtk4-dev
 gtk4-lib
 gtk+-data
 gtk+-lib
-h5py
 harfbuzz-dev
 harfbuzz-lib
 harfbuzz-staticdev
-hdf5
-hdf5-dev
-hdf5-lib
-hdf5-openmpi
-hdf5-staticdev
+icu4c-dev
 icu4c-lib
 ImageMagick-dev
 jack2
@@ -366,8 +358,6 @@ nettle
 nettle-dev
 nettle-staticdev
 ninja
-not-ffmpeg
-not-ffmpeg-dev
 numlockx
 numpy
 numpy-dev
