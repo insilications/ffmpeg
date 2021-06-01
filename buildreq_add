@@ -528,6 +528,7 @@ sed
 setxkbmap
 shaderc
 shaderc-dev
+shaderc-lib
 shaderc-staticdev
 shared-mime-info
 six
