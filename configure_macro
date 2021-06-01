@@ -55,6 +55,7 @@
     --enable-gmp \
     --enable-avisynth \
     --enable-alsa \
+    --enable-libglslang \
     --enable-ladspa \
     --enable-libaom \
     --enable-libass \
