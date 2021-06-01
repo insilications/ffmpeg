@@ -36,7 +36,6 @@ bzip2-staticdev
 cairo
 cairo-dev
 cairo-lib
-ccache
 dav1d-dev
 dav1d-staticdev
 dbus-dev
@@ -145,6 +144,7 @@ libogg-staticdev
 libplacebo
 libplacebo-dev
 libplacebo-staticdev
+libpng
 libpng-dev
 libpng-lib
 libpng-staticdev
@@ -253,7 +253,16 @@ numlockx
 nv-codec-headers
 nv-codec-headers-dev
 opencl-headers
+opencl-headers-data
+opencl-headers-debuginfo
 opencl-headers-dev
+opencv
+opencv-bin
+opencv-data
+opencv-dev
+opencv-python
+opencv-python3
+opencv-staticdev
 openjpeg-dev
 openjpeg-staticdev
 openssl
