@@ -2,14 +2,12 @@
     --prefix=/usr \
     --libdir=/usr/lib64 \
     --pkg-config-flags="--static" \
-    --ar="gcc-ar" \
-    --nm="gcc-nm" \
-    --ranlib="gcc-ranlib" \
+    --ar="/usr/bin/gcc-ar" \
+    --nm="/usr/bin/gcc-nm" \
+    --ranlib="/usr/bin/gcc-ranlib" \
     --disable-shared \
     --disable-debug \
     --disable-avx512 \
-    --disable-mmx \
-    --disable-mmxext \
     --disable-podpages \
     --disable-stripping \
     --disable-gnutls \
