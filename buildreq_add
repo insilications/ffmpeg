@@ -126,6 +126,7 @@ googletest-dev
 graphite
 graphite-dev
 graphite-staticdev
+gsm
 gsm-dev
 gsm-staticdev
 gstreamer-dev
@@ -142,8 +143,6 @@ harfbuzz-staticdev
 icu4c-dev
 icu4c-lib
 ImageMagick-dev
-jack2
-jack2-dev
 jsoncpp
 jsoncpp-dev
 jsoncpp-lib

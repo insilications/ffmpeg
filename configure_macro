@@ -12,6 +12,7 @@
     --disable-stripping \
     --disable-gnutls \
     --disable-runtime-cpudetect \
+    --disable-libjack \
     --cpu=native \
     --enable-avx2 \
     --enable-doc \
@@ -53,9 +54,11 @@
     --enable-programs \
     --enable-ffplay \
     --enable-gmp \
+    --enable-libgsm \
     --enable-avisynth \
     --enable-alsa \
     --enable-libglslang \
+    --enable-libopencv \
     --enable-ladspa \
     --enable-libaom \
     --enable-libass \
@@ -66,7 +69,6 @@
     --enable-libfontconfig \
     --enable-libfreetype \
     --enable-libfribidi \
-    --enable-libgsm \
     --enable-libmfx \
     --enable-libsvtav1 \
     --enable-libmp3lame \
