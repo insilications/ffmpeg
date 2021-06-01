@@ -149,6 +149,7 @@ jsoncpp-lib
 jsoncpp-staticdev
 json-c-staticdev
 keyutils
+pulsectl
 keyutils-dev
 krb5
 krb5-dev
