@@ -112,4 +112,4 @@
     --enable-zlib \
     --extra-cflags="-I/usr/local/cuda/include" \
     --nvccflags="-O3 -Xptxas -O3,-v -cudart=static -ccbin=/usr/bin/gcc-10 -Xcompiler -O3,-static,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-flto=16,-fuse-linker-plugin,-ffat-lto-objects,-fasynchronous-unwind-tables -Xlinker -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static -Xarchive -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static" \
-    --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib64/vdpau -L/usr/lib64/dri -L/usr/cuda/lib64"
+    --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib64/vdpau -L/usr/lib64/dri -L/usr/local/cuda/lib64"
