@@ -383,7 +383,6 @@ BuildRequires : opencl-headers
 BuildRequires : opencl-headers-data
 BuildRequires : opencl-headers-debuginfo
 BuildRequires : opencl-headers-dev
-BuildRequires : opencv
 BuildRequires : opencv-bin
 BuildRequires : opencv-data
 BuildRequires : opencv-dev
@@ -871,7 +870,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622628868
+export SOURCE_DATE_EPOCH=1622628923
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -1027,7 +1026,7 @@ make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1622628868
+export SOURCE_DATE_EPOCH=1622628923
 rm -rf %{buildroot}
 %make_install
 ## install_append content

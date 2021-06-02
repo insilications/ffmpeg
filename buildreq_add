@@ -52,8 +52,6 @@ cairo-lib
 cmake
 compat-gcc-10
 compat-gcc-10-dev
-compat-gcc-10
-compat-gcc-10-dev
 curl-dev
 Cython
 Cython-python
@@ -355,6 +353,8 @@ nettle
 nettle-dev
 nettle-staticdev
 ninja
+not-ffmpeg
+not-ffmpeg-dev
 numlockx
 numpy
 numpy-dev
