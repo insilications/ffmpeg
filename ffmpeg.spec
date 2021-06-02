@@ -91,7 +91,6 @@ BuildRequires : eigen-dev
 BuildRequires : elfutils-dev
 BuildRequires : evtest
 BuildRequires : expat-dev
-BuildRequires : expat-dev32
 BuildRequires : expat-staticdev
 BuildRequires : fftw-dev
 BuildRequires : fftw-staticdev
@@ -180,7 +179,6 @@ BuildRequires : l-smash-staticdev
 BuildRequires : ladspa_sdk
 BuildRequires : ladspa_sdk-bin
 BuildRequires : ladspa_sdk-dev
-BuildRequires : ladspa_sdk-lib
 BuildRequires : ladspa_sdk-staticdev
 BuildRequires : lcms2
 BuildRequires : lcms2-dev
@@ -213,7 +211,6 @@ BuildRequires : libXrender-lib
 BuildRequires : libXtst-dev
 BuildRequires : libXtst-lib
 BuildRequires : libXxf86vm-dev
-BuildRequires : libXxf86vm-dev32
 BuildRequires : libXxf86vm-lib
 BuildRequires : libaom-dev
 BuildRequires : libaom-staticdev
@@ -289,9 +286,7 @@ BuildRequires : librsvg-lib
 BuildRequires : librsvg-staticdev
 BuildRequires : libsamplerate
 BuildRequires : libsamplerate-dev
-BuildRequires : libsamplerate-dev32
 BuildRequires : libsamplerate-staticdev
-BuildRequires : libsamplerate-staticdev32
 BuildRequires : libsndfile
 BuildRequires : libsndfile-dev
 BuildRequires : libsndfile-staticdev
@@ -876,7 +871,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622630887
+export SOURCE_DATE_EPOCH=1622631351
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -1034,7 +1029,7 @@ make -j16 V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1622630887
+export SOURCE_DATE_EPOCH=1622631351
 rm -rf %{buildroot}
 %make_install
 ## install_append content
