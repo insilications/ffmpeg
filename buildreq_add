@@ -149,7 +149,6 @@ jsoncpp-lib
 jsoncpp-staticdev
 json-c-staticdev
 keyutils
-pulsectl
 keyutils-dev
 krb5
 krb5-dev
@@ -229,6 +228,11 @@ libpng
 libpng-dev
 libpng-lib
 libpng-staticdev
+librsvg-bin
+librsvg-data
+librsvg-dev
+librsvg-lib
+librsvg-staticdev
 libsamplerate
 libsamplerate-dev
 libsamplerate-dev32
@@ -442,6 +446,7 @@ procps-ng
 pugixml-dev
 pulseaudio
 pulseaudio-dev
+pulsectl
 Pygments
 py-python
 pytest
