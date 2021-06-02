@@ -29,6 +29,8 @@ BuildRequires : SVT-AV1-staticdev
 BuildRequires : SVT-HEVC-dev
 BuildRequires : SVT-HEVC-staticdev
 BuildRequires : Sphinx
+BuildRequires : VTK
+BuildRequires : VTK-dev
 BuildRequires : Vulkan-Headers
 BuildRequires : Vulkan-Headers-dev
 BuildRequires : Vulkan-Loader
@@ -130,6 +132,8 @@ BuildRequires : glibc-dev32
 BuildRequires : glibc-lib-avx2
 BuildRequires : glibc-libc32
 BuildRequires : glibc-staticdev
+BuildRequires : glog
+BuildRequires : glog-dev
 BuildRequires : glu
 BuildRequires : glu-dev
 BuildRequires : gmp
@@ -153,9 +157,13 @@ BuildRequires : gtk3-lib
 BuildRequires : gtk4
 BuildRequires : gtk4-dev
 BuildRequires : gtk4-lib
+BuildRequires : h5py
 BuildRequires : harfbuzz-dev
 BuildRequires : harfbuzz-lib
 BuildRequires : harfbuzz-staticdev
+BuildRequires : hdf5
+BuildRequires : hdf5-dev
+BuildRequires : hdf5-staticdev
 BuildRequires : icu4c-dev
 BuildRequires : icu4c-lib
 BuildRequires : json-c-staticdev
@@ -366,6 +374,8 @@ BuildRequires : nettle
 BuildRequires : nettle-dev
 BuildRequires : nettle-staticdev
 BuildRequires : ninja
+BuildRequires : not-ffmpeg
+BuildRequires : not-ffmpeg-dev
 BuildRequires : numlockx
 BuildRequires : numpy
 BuildRequires : numpy-dev
@@ -383,10 +393,6 @@ BuildRequires : opencl-headers
 BuildRequires : opencl-headers-data
 BuildRequires : opencl-headers-debuginfo
 BuildRequires : opencl-headers-dev
-BuildRequires : opencv-bin
-BuildRequires : opencv-data
-BuildRequires : opencv-dev
-BuildRequires : opencv-staticdev
 BuildRequires : openjdk13
 BuildRequires : openjdk13-dev
 BuildRequires : openjpeg-dev
@@ -870,7 +876,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622628923
+export SOURCE_DATE_EPOCH=1622630887
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -967,7 +973,6 @@ export LIBVA_DRIVERS_PATH=/usr/lib64/dri
     --enable-avisynth \
     --enable-alsa \
     --enable-libglslang \
-    --enable-libopencv \
     --enable-librsvg \
     --enable-ladspa \
     --enable-librubberband \
@@ -1022,11 +1027,14 @@ export LIBVA_DRIVERS_PATH=/usr/lib64/dri
 ## make_prepend content
 echo 'include $(SRC_PATH)/ffbuild/libffmpeg.mak' >> Makefile
 ## make_prepend end
-make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
+## make_macro content
+exit 1
+make -j16 V=1 VERBOSE=1
+## make_macro end
 
 
 %install
-export SOURCE_DATE_EPOCH=1622628923
+export SOURCE_DATE_EPOCH=1622630887
 rm -rf %{buildroot}
 %make_install
 ## install_append content

@@ -71,7 +71,6 @@ eigen-dev
 elfutils-dev
 evtest
 expat-dev
-expat-dev32
 expat-staticdev
 fftw-dev
 fftw-staticdev
@@ -238,9 +237,7 @@ librsvg-lib
 librsvg-staticdev
 libsamplerate
 libsamplerate-dev
-libsamplerate-dev32
 libsamplerate-staticdev
-libsamplerate-staticdev32
 libSM-dev
 libsndfile
 libsndfile-dev
@@ -324,7 +321,6 @@ libxvid
 libxvid-dev
 libxvid-staticdev
 libXxf86vm-dev
-libXxf86vm-dev32
 libXxf86vm-lib
 libzimg-dev
 libzimg-staticdev
