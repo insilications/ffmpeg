@@ -142,6 +142,7 @@ harfbuzz-lib
 harfbuzz-staticdev
 icu4c-dev
 icu4c-lib
+ImageMagick
 ImageMagick-dev
 jsoncpp
 jsoncpp-dev
@@ -263,6 +264,7 @@ libva-dev
 libva-intel-driver
 libva-lib
 libvapoursynth
+libvapoursynth-bin
 libvapoursynth-dev
 libvapoursynth-python
 libvapoursynth-python3
@@ -374,8 +376,6 @@ opencv
 opencv-bin
 opencv-data
 opencv-dev
-opencv-python
-opencv-python3
 opencv-staticdev
 openjdk13
 openjdk13-dev

@@ -579,7 +579,6 @@ BuildRequires : pkgconfig(speex)
 BuildRequires : pkgconfig(srt)
 BuildRequires : pkgconfig(systemd)
 BuildRequires : pkgconfig(theora)
-BuildRequires : pkgconfig(udfread)
 BuildRequires : pkgconfig(uuid)
 BuildRequires : pkgconfig(vapoursynth)
 BuildRequires : pkgconfig(vapoursynth-script)
@@ -872,7 +871,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622627936
+export SOURCE_DATE_EPOCH=1622627992
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -1028,7 +1027,7 @@ make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1622627936
+export SOURCE_DATE_EPOCH=1622627992
 rm -rf %{buildroot}
 %make_install
 ## install_append content
