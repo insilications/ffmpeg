@@ -60,7 +60,6 @@
     --enable-ffplay \
     --enable-gmp \
     --enable-libgsm \
-    --enable-avisynth \
     --enable-alsa \
     --enable-libglslang \
     --enable-librsvg \

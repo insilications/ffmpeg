@@ -871,7 +871,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622631351
+export SOURCE_DATE_EPOCH=1622631407
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -961,7 +961,6 @@ export LIBVA_DRIVERS_PATH=/usr/lib64/dri
     --enable-error-resilience \
     --enable-ffmpeg \
     --enable-ffnvcodec \
-    --enable-programs \
     --enable-ffplay \
     --enable-gmp \
     --enable-libgsm \
@@ -1029,7 +1028,7 @@ make -j16 V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1622631351
+export SOURCE_DATE_EPOCH=1622631407
 rm -rf %{buildroot}
 %make_install
 ## install_append content
