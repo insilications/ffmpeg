@@ -577,6 +577,8 @@ vamp-sdk
 vamp-sdk-dev
 vamp-sdk-staticdev
 virtualenv
+VTK
+VTK-dev
 Vulkan-Headers
 Vulkan-Headers-dev
 Vulkan-Loader
