@@ -565,7 +565,6 @@ uchardet-staticdev
 util-linux
 util-linux-dev
 util-linux-staticdev
-v4l-utils-dev
 valgrind
 valgrind-dev
 vamp-sdk

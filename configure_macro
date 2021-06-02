@@ -17,6 +17,7 @@
     --disable-libjack \
     --disable-cuda-llvm \
     --disable-libmfx \
+    --disable-libv4l2 \
     --cpu=native \
     --enable-optimizations \
     --enable-avx2 \
