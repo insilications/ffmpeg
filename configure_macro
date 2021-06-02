@@ -13,6 +13,8 @@
     --disable-gnutls \
     --disable-runtime-cpudetect \
     --disable-libjack \
+    --disable-cuda-llvm \
+    --disable-libmfx \
     --cpu=native \
     --enable-avx2 \
     --enable-doc \
@@ -62,6 +64,7 @@
     --enable-libopencv \
     --enable-librsvg \
     --enable-ladspa \
+    --enable-librubberband \
     --enable-libaom \
     --enable-libass \
     --enable-libbluray \
@@ -71,7 +74,6 @@
     --enable-libfontconfig \
     --enable-libfreetype \
     --enable-libfribidi \
-    --enable-libmfx \
     --enable-libsvtav1 \
     --enable-libmp3lame \
     --enable-libnpp \
@@ -81,7 +83,6 @@
     --enable-libspeex \
     --enable-libsrt \
     --enable-libtheora \
-    --enable-libvidstab \
     --enable-libvorbis \
     --enable-libvpx \
     --enable-libwebp \
@@ -89,6 +90,9 @@
     --enable-libx265 \
     --enable-libopenjpeg \
     --enable-libxcb \
+    --enable-libxcb-shm \
+    --enable-libxcb-xfixes \
+    --enable-libxcb-shape \
     --enable-libxml2 \
     --enable-libxvid \
     --enable-libzimg \

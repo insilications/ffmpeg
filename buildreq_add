@@ -324,15 +324,6 @@ libXxf86vm-dev32
 libXxf86vm-lib
 libzimg-dev
 libzimg-staticdev
-llvm
-llvm-abi
-llvm-bin
-llvm-data
-llvm-dev
-llvm-lib
-llvm-libexec
-llvm-man
-llvm-staticdev
 lrzip-dev
 lrzip-staticdev
 l-smash-dev
@@ -524,7 +515,10 @@ rsync
 rtmpdump
 rtmpdump-dev
 rtmpdump-staticdev
+rubberband-bin
+rubberband-data
 rubberband-dev
+rubberband-lib
 rubberband-staticdev
 SDL2
 SDL2-dev
@@ -549,6 +543,7 @@ Sphinx
 sqlite-autoconf
 sqlite-autoconf-dev
 sqlite-autoconf-staticdev
+SVT-AV1-bin
 SVT-AV1-dev
 SVT-AV1-staticdev
 SVT-HEVC-dev
@@ -599,6 +594,7 @@ xcb-proto
 xcb-proto-dev
 xcb-util-cursor-dev
 xcb-util-dev
+xcb-util-image
 xcb-util-image-dev
 xcb-util-keysyms-dev
 xcb-util-renderutil-dev
