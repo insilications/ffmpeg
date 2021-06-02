@@ -13,6 +13,7 @@ Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 BuildRequires : Cython
 BuildRequires : Cython-python
+BuildRequires : ImageMagick
 BuildRequires : ImageMagick-dev
 BuildRequires : LuaJIT
 BuildRequires : LuaJIT-dev
@@ -307,6 +308,7 @@ BuildRequires : libva-dev
 BuildRequires : libva-intel-driver
 BuildRequires : libva-lib
 BuildRequires : libvapoursynth
+BuildRequires : libvapoursynth-bin
 BuildRequires : libvapoursynth-dev
 BuildRequires : libvapoursynth-python
 BuildRequires : libvapoursynth-python3
@@ -385,8 +387,6 @@ BuildRequires : opencv
 BuildRequires : opencv-bin
 BuildRequires : opencv-data
 BuildRequires : opencv-dev
-BuildRequires : opencv-python
-BuildRequires : opencv-python3
 BuildRequires : opencv-staticdev
 BuildRequires : openjdk13
 BuildRequires : openjdk13-dev
@@ -871,7 +871,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622627992
+export SOURCE_DATE_EPOCH=1622628868
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -1027,7 +1027,7 @@ make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1622627992
+export SOURCE_DATE_EPOCH=1622628868
 rm -rf %{buildroot}
 %make_install
 ## install_append content
