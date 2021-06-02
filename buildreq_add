@@ -157,7 +157,6 @@ krb5-dev
 ladspa_sdk
 ladspa_sdk-bin
 ladspa_sdk-dev
-ladspa_sdk-lib
 ladspa_sdk-staticdev
 lcms2
 lcms2-dev
