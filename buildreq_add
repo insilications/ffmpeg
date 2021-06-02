@@ -49,11 +49,11 @@ ca-certs-static
 cairo
 cairo-dev
 cairo-lib
-clazy
 cmake
 compat-gcc-10
 compat-gcc-10-dev
-cppcheck
+compat-gcc-10
+compat-gcc-10-dev
 curl-dev
 Cython
 Cython-python
