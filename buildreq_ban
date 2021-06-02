@@ -2,5 +2,3 @@
 # undesirable. One entry per line, no whitespace.
 valgrind
 valgrind-dev
-opencv-python
-opencv-python3

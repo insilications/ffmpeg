@@ -376,10 +376,6 @@ opencl-headers
 opencl-headers-data
 opencl-headers-debuginfo
 opencl-headers-dev
-opencv-bin
-opencv-data
-opencv-dev
-opencv-staticdev
 openjdk13
 openjdk13-dev
 openjpeg-dev

@@ -64,7 +64,6 @@
     --enable-avisynth \
     --enable-alsa \
     --enable-libglslang \
-    --enable-libopencv \
     --enable-librsvg \
     --enable-ladspa \
     --enable-librubberband \
