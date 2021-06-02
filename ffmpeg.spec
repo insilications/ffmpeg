@@ -4,54 +4,96 @@
 #
 %define keepstatic 1
 Name     : ffmpeg
-Version  : 4.3
+Version  : 21.06.02
 Release  : 18
-URL      : file:///insilications/build/clearlinux/packages/ffmpeg/ffmpeg-v4.3.tar.gz
-Source0  : file:///insilications/build/clearlinux/packages/ffmpeg/ffmpeg-v4.3.tar.gz
+URL      : file:///aot/build/clearlinux/packages/ffmpeg/ffmpeg-v21.06.02.tar.gz
+Source0  : file:///aot/build/clearlinux/packages/ffmpeg/ffmpeg-v21.06.02.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
-Requires: ffmpeg-bin = %{version}-%{release}
-Requires: ffmpeg-data = %{version}-%{release}
-Requires: ffmpeg-lib = %{version}-%{release}
+BuildRequires : Cython
+BuildRequires : Cython-python
 BuildRequires : ImageMagick-dev
+BuildRequires : LuaJIT
+BuildRequires : LuaJIT-dev
+BuildRequires : LuaJIT-staticdev
+BuildRequires : PyYAML
+BuildRequires : Pygments
 BuildRequires : SDL2
 BuildRequires : SDL2-dev
 BuildRequires : SDL2-staticdev
+BuildRequires : SVT-AV1-bin
 BuildRequires : SVT-AV1-dev
 BuildRequires : SVT-AV1-staticdev
 BuildRequires : SVT-HEVC-dev
 BuildRequires : SVT-HEVC-staticdev
 BuildRequires : Sphinx
+BuildRequires : Vulkan-Headers
 BuildRequires : Vulkan-Headers-dev
+BuildRequires : Vulkan-Loader
 BuildRequires : Vulkan-Loader-dev
+BuildRequires : Vulkan-Tools
+BuildRequires : Vulkan-ValidationLayers
+BuildRequires : Z3-dev
+BuildRequires : Z3-staticdev
 BuildRequires : acl
 BuildRequires : acl-dev
 BuildRequires : acl-staticdev
+BuildRequires : ade-dev
+BuildRequires : alsa-firmware
 BuildRequires : alsa-lib-dev
 BuildRequires : alsa-lib-lib
+BuildRequires : alsa-plugins
+BuildRequires : alsa-plugins-lib
 BuildRequires : alsa-tools
+BuildRequires : alsa-ucm-conf
+BuildRequires : alsa-utils
+BuildRequires : asciidoctor-dev
+BuildRequires : beautifulsoup4
 BuildRequires : binutils
 BuildRequires : binutils-dev
 BuildRequires : binutils-staticdev
 BuildRequires : brotli
 BuildRequires : brotli-dev
 BuildRequires : brotli-staticdev
+BuildRequires : buildreq-cmake
 BuildRequires : buildreq-configure
+BuildRequires : buildreq-distutils3
+BuildRequires : buildreq-qmake
 BuildRequires : bzip2
 BuildRequires : bzip2-dev
 BuildRequires : bzip2-staticdev
+BuildRequires : ca-certs
+BuildRequires : ca-certs-static
 BuildRequires : cairo
 BuildRequires : cairo-dev
 BuildRequires : cairo-lib
-BuildRequires : ccache
-BuildRequires : cuda
-BuildRequires : cuda-dev
-BuildRequires : cuda-staticdev
+BuildRequires : clazy
+BuildRequires : cmake
+BuildRequires : compat-gcc-10
+BuildRequires : compat-gcc-10-dev
+BuildRequires : cppcheck
+BuildRequires : curl-dev
+BuildRequires : dav1d-dev
+BuildRequires : dav1d-staticdev
+BuildRequires : dbus
+BuildRequires : dbus-broker
 BuildRequires : dbus-dev
+BuildRequires : dbus-glib
+BuildRequires : dbus-glib-dev
+BuildRequires : dbus-python
+BuildRequires : doxygen
+BuildRequires : e2fsprogs-dev
+BuildRequires : eigen
+BuildRequires : eigen-data
+BuildRequires : eigen-dev
+BuildRequires : elfutils-dev
 BuildRequires : evtest
 BuildRequires : expat-dev
+BuildRequires : expat-dev32
 BuildRequires : expat-staticdev
+BuildRequires : fftw-dev
+BuildRequires : fftw-staticdev
 BuildRequires : findutils
 BuildRequires : flac
 BuildRequires : flac-dev
@@ -67,35 +109,67 @@ BuildRequires : fribidi-dev
 BuildRequires : fribidi-staticdev
 BuildRequires : gcc
 BuildRequires : gcc-dev
+BuildRequires : gcc-dev32
+BuildRequires : gcc-libgcc32
 BuildRequires : gcc-libs-math
-BuildRequires : gcc9
-BuildRequires : gcc9-dev
-BuildRequires : gcc9-libs-math
+BuildRequires : gcc-libstdc++32
+BuildRequires : gcc-libubsan
+BuildRequires : gcc-locale
+BuildRequires : gdb
+BuildRequires : gdb-dev
+BuildRequires : gettext
 BuildRequires : glib
 BuildRequires : glib-bin
 BuildRequires : glib-data
 BuildRequires : glib-dev
+BuildRequires : glib-dev32
 BuildRequires : glib-lib
 BuildRequires : glib-staticdev
 BuildRequires : glibc
 BuildRequires : glibc-dev
+BuildRequires : glibc-dev32
+BuildRequires : glibc-lib-avx2
+BuildRequires : glibc-libc32
 BuildRequires : glibc-staticdev
+BuildRequires : glu
+BuildRequires : glu-dev
 BuildRequires : gmp
 BuildRequires : gmp-dev
 BuildRequires : gmp-staticdev
 BuildRequires : gnutls
 BuildRequires : gnutls-dev
+BuildRequires : googletest
+BuildRequires : googletest-dev
+BuildRequires : graphite
 BuildRequires : graphite-dev
 BuildRequires : graphite-staticdev
+BuildRequires : gsm
 BuildRequires : gsm-dev
 BuildRequires : gsm-staticdev
+BuildRequires : gstreamer-dev
 BuildRequires : gtk+-data
 BuildRequires : gtk+-lib
+BuildRequires : gtk3-dev
 BuildRequires : gtk3-lib
+BuildRequires : gtk4
+BuildRequires : gtk4-dev
+BuildRequires : gtk4-lib
 BuildRequires : harfbuzz-dev
 BuildRequires : harfbuzz-lib
 BuildRequires : harfbuzz-staticdev
+BuildRequires : icu4c-dev
 BuildRequires : icu4c-lib
+BuildRequires : json-c-staticdev
+BuildRequires : jsoncpp
+BuildRequires : jsoncpp-dev
+BuildRequires : jsoncpp-lib
+BuildRequires : jsoncpp-staticdev
+BuildRequires : keyutils
+BuildRequires : keyutils-dev
+BuildRequires : krb5
+BuildRequires : krb5-dev
+BuildRequires : l-smash-dev
+BuildRequires : l-smash-staticdev
 BuildRequires : ladspa_sdk
 BuildRequires : ladspa_sdk-bin
 BuildRequires : ladspa_sdk-dev
@@ -104,6 +178,8 @@ BuildRequires : ladspa_sdk-staticdev
 BuildRequires : lcms2
 BuildRequires : lcms2-dev
 BuildRequires : lcms2-staticdev
+BuildRequires : libICE-dev
+BuildRequires : libSM-dev
 BuildRequires : libX11-data
 BuildRequires : libX11-dev
 BuildRequires : libX11-lib
@@ -130,6 +206,7 @@ BuildRequires : libXrender-lib
 BuildRequires : libXtst-dev
 BuildRequires : libXtst-lib
 BuildRequires : libXxf86vm-dev
+BuildRequires : libXxf86vm-dev32
 BuildRequires : libXxf86vm-lib
 BuildRequires : libaom-dev
 BuildRequires : libaom-staticdev
@@ -143,11 +220,11 @@ BuildRequires : libatomic_ops-dev
 BuildRequires : libatomic_ops-staticdev
 BuildRequires : libbluray-dev
 BuildRequires : libbluray-staticdev
+BuildRequires : libcap
+BuildRequires : libcap-dev
 BuildRequires : libcap-ng-dev
 BuildRequires : libconfig-dev
 BuildRequires : libconfig-staticdev
-BuildRequires : libdav1d-dev
-BuildRequires : libdav1d-staticdev
 BuildRequires : libdrm
 BuildRequires : libdrm-dev
 BuildRequires : libdrm-lib
@@ -158,20 +235,27 @@ BuildRequires : libdvdnav-staticdev
 BuildRequires : libdvdread
 BuildRequires : libdvdread-dev
 BuildRequires : libdvdread-staticdev
+BuildRequires : libedit
+BuildRequires : libedit-dev
 BuildRequires : libepoxy
 BuildRequires : libepoxy-dev
 BuildRequires : libepoxy-staticdev
 BuildRequires : libfdk_aac-dev
 BuildRequires : libfdk_aac-staticdev
-BuildRequires : libffado
-BuildRequires : libffado-dev
-BuildRequires : libffado-python3
+BuildRequires : libffi
 BuildRequires : libffi-dev
 BuildRequires : libffi-staticdev
+BuildRequires : libgcc1
+BuildRequires : libgcrypt
+BuildRequires : libgcrypt-dev
+BuildRequires : libgpg-error
+BuildRequires : libgpg-error-dev
+BuildRequires : libgphoto2-dev
 BuildRequires : libidn2
 BuildRequires : libidn2-dev
 BuildRequires : libidn2-staticdev
 BuildRequires : libinput-data
+BuildRequires : libinput-dev
 BuildRequires : libinput-lib
 BuildRequires : libinput-libexec
 BuildRequires : libjpeg-turbo-dev
@@ -182,20 +266,32 @@ BuildRequires : libmp3lame-staticdev
 BuildRequires : libogg
 BuildRequires : libogg-dev
 BuildRequires : libogg-staticdev
+BuildRequires : libpciaccess
+BuildRequires : libpciaccess-dev
 BuildRequires : libplacebo
 BuildRequires : libplacebo-dev
 BuildRequires : libplacebo-staticdev
+BuildRequires : libpng
 BuildRequires : libpng-dev
 BuildRequires : libpng-lib
 BuildRequires : libpng-staticdev
+BuildRequires : librsvg-bin
+BuildRequires : librsvg-data
+BuildRequires : librsvg-dev
+BuildRequires : librsvg-lib
+BuildRequires : librsvg-staticdev
 BuildRequires : libsamplerate
 BuildRequires : libsamplerate-dev
+BuildRequires : libsamplerate-dev32
 BuildRequires : libsamplerate-staticdev
+BuildRequires : libsamplerate-staticdev32
 BuildRequires : libsndfile
 BuildRequires : libsndfile-dev
 BuildRequires : libsndfile-staticdev
 BuildRequires : libsrt-dev
 BuildRequires : libsrt-staticdev
+BuildRequires : libstdc++
+BuildRequires : libstdc++-dev
 BuildRequires : libtasn1-dev
 BuildRequires : libtasn1-staticdev
 BuildRequires : libtheora-dev
@@ -206,11 +302,11 @@ BuildRequires : libunistring-dev
 BuildRequires : libunistring-staticdev
 BuildRequires : libunwind
 BuildRequires : libunwind-dev
-BuildRequires : libunwind-dev32
-BuildRequires : libunwind-staticdev
-BuildRequires : libunwind-staticdev32
+BuildRequires : libusb
+BuildRequires : libusb-dev
 BuildRequires : libva
 BuildRequires : libva-dev
+BuildRequires : libva-intel-driver
 BuildRequires : libva-lib
 BuildRequires : libvapoursynth
 BuildRequires : libvapoursynth-dev
@@ -219,13 +315,12 @@ BuildRequires : libvapoursynth-python3
 BuildRequires : libvapoursynth-staticdev
 BuildRequires : libvdpau
 BuildRequires : libvdpau-dev
-BuildRequires : libvidstab-dev
-BuildRequires : libvidstab-staticdev
 BuildRequires : libvorbis
 BuildRequires : libvorbis-dev
 BuildRequires : libvorbis-staticdev
 BuildRequires : libvpx-dev
 BuildRequires : libvpx-staticdev
+BuildRequires : libwebp
 BuildRequires : libwebp-dev
 BuildRequires : libwebp-staticdev
 BuildRequires : libx264-dev
@@ -235,14 +330,20 @@ BuildRequires : libx265-dev
 BuildRequires : libx265-staticdev
 BuildRequires : libxcb-dev
 BuildRequires : libxcb-lib
+BuildRequires : libxkbcommon
+BuildRequires : libxkbcommon-dev
 BuildRequires : libxml2-dev
 BuildRequires : libxml2-staticdev
+BuildRequires : libxslt-bin
+BuildRequires : libxslt-dev
+BuildRequires : libxslt-staticdev
 BuildRequires : libxvid
 BuildRequires : libxvid-dev
 BuildRequires : libxvid-staticdev
 BuildRequires : libzimg-dev
 BuildRequires : libzimg-staticdev
-BuildRequires : llvm-lib
+BuildRequires : lrzip-dev
+BuildRequires : lrzip-staticdev
 BuildRequires : lz4
 BuildRequires : lz4-dev
 BuildRequires : lz4-staticdev
@@ -254,29 +355,48 @@ BuildRequires : md4c-dev
 BuildRequires : md4c-staticdev
 BuildRequires : mediasdk-dev
 BuildRequires : mesa
+BuildRequires : mesa-demos
 BuildRequires : mesa-dev
 BuildRequires : mesa-lib
 BuildRequires : mm-common-dev
-BuildRequires : moonjit
-BuildRequires : moonjit-dev
-BuildRequires : moonjit-staticdev
 BuildRequires : nasm
 BuildRequires : nasm-bin
+BuildRequires : ncurses-dev
 BuildRequires : nettle
 BuildRequires : nettle-dev
 BuildRequires : nettle-staticdev
+BuildRequires : ninja
 BuildRequires : numlockx
+BuildRequires : numpy
+BuildRequires : numpy-dev
+BuildRequires : numpy-stl
 BuildRequires : nv-codec-headers
 BuildRequires : nv-codec-headers-dev
-BuildRequires : nvidia
-BuildRequires : nvidia-dev
-BuildRequires : nvidia-lib
+BuildRequires : ocl-icd-dev
+BuildRequires : onemkl
+BuildRequires : onemkl-dev
+BuildRequires : onemkl-lib
+BuildRequires : openblas
+BuildRequires : openblas-dev
+BuildRequires : openblas-staticdev
 BuildRequires : opencl-headers
+BuildRequires : opencl-headers-data
+BuildRequires : opencl-headers-debuginfo
 BuildRequires : opencl-headers-dev
+BuildRequires : opencv
+BuildRequires : opencv-bin
+BuildRequires : opencv-data
+BuildRequires : opencv-dev
+BuildRequires : opencv-python
+BuildRequires : opencv-python3
+BuildRequires : opencv-staticdev
+BuildRequires : openjdk13
+BuildRequires : openjdk13-dev
 BuildRequires : openjpeg-dev
 BuildRequires : openjpeg-staticdev
 BuildRequires : openssl
 BuildRequires : openssl-dev
+BuildRequires : openssl-lib
 BuildRequires : openssl-staticdev
 BuildRequires : opus-dev
 BuildRequires : opus-staticdev
@@ -284,10 +404,15 @@ BuildRequires : orc-dev
 BuildRequires : orc-staticdev
 BuildRequires : p11-kit
 BuildRequires : p11-kit-dev
+BuildRequires : pacrunner
+BuildRequires : pacrunner-dev
 BuildRequires : pango-lib
 BuildRequires : pcre-dev
 BuildRequires : pcre-staticdev
+BuildRequires : pcre2-dev
+BuildRequires : pcre2-staticdev
 BuildRequires : perl
+BuildRequires : perl(XML::Parser)
 BuildRequires : perl-Config-General
 BuildRequires : perl-Config-Tiny
 BuildRequires : perl-Crypt-SSLeay
@@ -313,6 +438,7 @@ BuildRequires : perl-XML-NamespaceSupport
 BuildRequires : perl-XML-Parser
 BuildRequires : perl-libwww-perl
 BuildRequires : perl-man
+BuildRequires : pip
 BuildRequires : pixman
 BuildRequires : pixman-dev
 BuildRequires : pixman-lib
@@ -326,6 +452,7 @@ BuildRequires : pkgconfig(SvtAv1Dec)
 BuildRequires : pkgconfig(SvtAv1Enc)
 BuildRequires : pkgconfig(SvtHevcEnc)
 BuildRequires : pkgconfig(alsa)
+BuildRequires : pkgconfig(alsa-topology)
 BuildRequires : pkgconfig(aom)
 BuildRequires : pkgconfig(atomic_ops)
 BuildRequires : pkgconfig(blkid)
@@ -348,6 +475,7 @@ BuildRequires : pkgconfig(cairo-xlib)
 BuildRequires : pkgconfig(cairo-xlib-xcb)
 BuildRequires : pkgconfig(cairo-xlib-xrender)
 BuildRequires : pkgconfig(dav1d)
+BuildRequires : pkgconfig(dbus-1)
 BuildRequires : pkgconfig(dbus-c++-1)
 BuildRequires : pkgconfig(dbus-c++-ecore-1)
 BuildRequires : pkgconfig(dbus-c++-glib-1)
@@ -363,10 +491,16 @@ BuildRequires : pkgconfig(fontconfig)
 BuildRequires : pkgconfig(freetype2)
 BuildRequires : pkgconfig(fribidi)
 BuildRequires : pkgconfig(gbm)
+BuildRequires : pkgconfig(gdm)
 BuildRequires : pkgconfig(gio-2.0)
 BuildRequires : pkgconfig(gio-unix-2.0)
 BuildRequires : pkgconfig(gl)
+BuildRequires : pkgconfig(glesv1_cm)
+BuildRequires : pkgconfig(glesv2)
 BuildRequires : pkgconfig(glib-2.0)
+BuildRequires : pkgconfig(glu)
+BuildRequires : pkgconfig(gmock)
+BuildRequires : pkgconfig(gmock_main)
 BuildRequires : pkgconfig(gmodule-2.0)
 BuildRequires : pkgconfig(gmodule-export-2.0)
 BuildRequires : pkgconfig(gmodule-no-export-2.0)
@@ -375,9 +509,13 @@ BuildRequires : pkgconfig(gmpxx)
 BuildRequires : pkgconfig(gnutls)
 BuildRequires : pkgconfig(gobject-2.0)
 BuildRequires : pkgconfig(graphite2)
+BuildRequires : pkgconfig(gtest)
+BuildRequires : pkgconfig(gtest_main)
 BuildRequires : pkgconfig(gthread-2.0)
 BuildRequires : pkgconfig(haisrt)
 BuildRequires : pkgconfig(hogweed)
+BuildRequires : pkgconfig(ibus-1.0)
+BuildRequires : pkgconfig(ice)
 BuildRequires : pkgconfig(lame)
 BuildRequires : pkgconfig(libass)
 BuildRequires : pkgconfig(libbluray)
@@ -398,6 +536,7 @@ BuildRequires : pkgconfig(libffi)
 BuildRequires : pkgconfig(libidn2)
 BuildRequires : pkgconfig(libjpeg)
 BuildRequires : pkgconfig(libkms)
+BuildRequires : pkgconfig(liblsmash)
 BuildRequires : pkgconfig(liblzma)
 BuildRequires : pkgconfig(libmfx)
 BuildRequires : pkgconfig(libopenjp2)
@@ -408,8 +547,10 @@ BuildRequires : pkgconfig(libpcrecpp)
 BuildRequires : pkgconfig(libpcreposix)
 BuildRequires : pkgconfig(libpng)
 BuildRequires : pkgconfig(libpulse)
+BuildRequires : pkgconfig(libpulse-simple)
 BuildRequires : pkgconfig(librtmp)
 BuildRequires : pkgconfig(libssl)
+BuildRequires : pkgconfig(libsystemd)
 BuildRequires : pkgconfig(libtasn1)
 BuildRequires : pkgconfig(libturbojpeg)
 BuildRequires : pkgconfig(libudev)
@@ -420,6 +561,7 @@ BuildRequires : pkgconfig(libunwind-coredump)
 BuildRequires : pkgconfig(libunwind-generic)
 BuildRequires : pkgconfig(libunwind-ptrace)
 BuildRequires : pkgconfig(libunwind-setjmp)
+BuildRequires : pkgconfig(libusb-1.0)
 BuildRequires : pkgconfig(libva)
 BuildRequires : pkgconfig(libwebp)
 BuildRequires : pkgconfig(libwebpdecoder)
@@ -434,18 +576,20 @@ BuildRequires : pkgconfig(nettle)
 BuildRequires : pkgconfig(ogg)
 BuildRequires : pkgconfig(openssl)
 BuildRequires : pkgconfig(opus)
+BuildRequires : pkgconfig(osmesa)
 BuildRequires : pkgconfig(p11-kit-1)
 BuildRequires : pkgconfig(pciaccess)
 BuildRequires : pkgconfig(pixman-1)
 BuildRequires : pkgconfig(presentproto)
-BuildRequires : pkgconfig(python-3.8)
-BuildRequires : pkgconfig(python-3.8-embed)
 BuildRequires : pkgconfig(readline)
 BuildRequires : pkgconfig(rubberband)
+BuildRequires : pkgconfig(samplerate)
 BuildRequires : pkgconfig(sdl2)
+BuildRequires : pkgconfig(sm)
 BuildRequires : pkgconfig(smartcols)
 BuildRequires : pkgconfig(speex)
 BuildRequires : pkgconfig(srt)
+BuildRequires : pkgconfig(systemd)
 BuildRequires : pkgconfig(theora)
 BuildRequires : pkgconfig(udfread)
 BuildRequires : pkgconfig(uuid)
@@ -455,10 +599,17 @@ BuildRequires : pkgconfig(vdpau)
 BuildRequires : pkgconfig(vidstab)
 BuildRequires : pkgconfig(vorbis)
 BuildRequires : pkgconfig(vpx)
+BuildRequires : pkgconfig(vulkan)
+BuildRequires : pkgconfig(wayland-client)
+BuildRequires : pkgconfig(wayland-cursor)
+BuildRequires : pkgconfig(wayland-egl)
+BuildRequires : pkgconfig(wayland-protocols)
+BuildRequires : pkgconfig(wayland-scanner)
 BuildRequires : pkgconfig(x11)
 BuildRequires : pkgconfig(x11-xcb)
 BuildRequires : pkgconfig(x264)
 BuildRequires : pkgconfig(x265)
+BuildRequires : pkgconfig(xatracker)
 BuildRequires : pkgconfig(xcb)
 BuildRequires : pkgconfig(xcb-aux)
 BuildRequires : pkgconfig(xcb-composite)
@@ -489,57 +640,186 @@ BuildRequires : pkgconfig(xcursor)
 BuildRequires : pkgconfig(xdamage)
 BuildRequires : pkgconfig(xdg-desktop-portal)
 BuildRequires : pkgconfig(xext)
+BuildRequires : pkgconfig(xextproto)
 BuildRequires : pkgconfig(xf86driproto)
 BuildRequires : pkgconfig(xfixes)
 BuildRequires : pkgconfig(xfont)
+BuildRequires : pkgconfig(xi)
+BuildRequires : pkgconfig(xinerama)
+BuildRequires : pkgconfig(xkbcommon)
+BuildRequires : pkgconfig(xmu)
 BuildRequires : pkgconfig(xorg-macros)
 BuildRequires : pkgconfig(xorg-server)
+BuildRequires : pkgconfig(xpm)
+BuildRequires : pkgconfig(xproto)
 BuildRequires : pkgconfig(xrandr)
 BuildRequires : pkgconfig(xrender)
 BuildRequires : pkgconfig(xscrnsaver)
 BuildRequires : pkgconfig(xshmfence)
+BuildRequires : pkgconfig(xt)
 BuildRequires : pkgconfig(xtst)
 BuildRequires : pkgconfig(xvmc)
 BuildRequires : pkgconfig(xxf86vm)
 BuildRequires : pkgconfig(zimg)
 BuildRequires : pkgconfig(zlib)
+BuildRequires : pluggy
+BuildRequires : procps-ng
+BuildRequires : pugixml-dev
 BuildRequires : pulseaudio
 BuildRequires : pulseaudio-dev
+BuildRequires : pulsectl
+BuildRequires : py-python
+BuildRequires : pytest
+BuildRequires : python-pkgconfig
 BuildRequires : python3-core
 BuildRequires : python3-dev
 BuildRequires : python3-staticdev
+BuildRequires : qca-qt5
+BuildRequires : qca-qt5-dev
+BuildRequires : qt3d
+BuildRequires : qt3d-dev
+BuildRequires : qt5ct
+BuildRequires : qtbase
+BuildRequires : qtbase-dev
+BuildRequires : qtbase-extras
+BuildRequires : qtcanvas3d
+BuildRequires : qtcharts
+BuildRequires : qtcharts-dev
+BuildRequires : qtconnectivity
+BuildRequires : qtconnectivity-dev
+BuildRequires : qtdatavis3d
+BuildRequires : qtdatavis3d-dev
+BuildRequires : qtdeclarative
+BuildRequires : qtdeclarative-dev
+BuildRequires : qtgamepad
+BuildRequires : qtgamepad-dev
+BuildRequires : qtgraphicaleffects
+BuildRequires : qtimageformats
+BuildRequires : qtlocation
+BuildRequires : qtlocation-dev
+BuildRequires : qtmqtt
+BuildRequires : qtmqtt-dev
+BuildRequires : qtmultimedia
+BuildRequires : qtmultimedia-dev
+BuildRequires : qtnetworkauth
+BuildRequires : qtnetworkauth-dev
+BuildRequires : qtquickcontrols
+BuildRequires : qtquickcontrols2
+BuildRequires : qtquickcontrols2-dev
+BuildRequires : qtremoteobjects-dev
+BuildRequires : qtscript
+BuildRequires : qtscript-dev
+BuildRequires : qtscript-extras
+BuildRequires : qtscxml
+BuildRequires : qtscxml-dev
+BuildRequires : qtsensors
+BuildRequires : qtsensors-dev
+BuildRequires : qtserialbus
+BuildRequires : qtserialbus-dev
+BuildRequires : qtserialport
+BuildRequires : qtserialport-dev
+BuildRequires : qtspeech
+BuildRequires : qtspeech-dev
+BuildRequires : qtsvg
+BuildRequires : qtsvg-dev
+BuildRequires : qttools
+BuildRequires : qttools-dev
+BuildRequires : qttranslations
+BuildRequires : qtvirtualkeyboard
+BuildRequires : qtvirtualkeyboard-dev
+BuildRequires : qtwayland
+BuildRequires : qtwayland-dev
+BuildRequires : qtwebchannel
+BuildRequires : qtwebchannel-dev
+BuildRequires : qtwebengine
+BuildRequires : qtwebengine-dev
+BuildRequires : qtwebsockets
+BuildRequires : qtwebsockets-dev
+BuildRequires : qtx11extras
+BuildRequires : qtx11extras-dev
+BuildRequires : qtxmlpatterns
+BuildRequires : qtxmlpatterns-dev
+BuildRequires : rsync
 BuildRequires : rtmpdump
 BuildRequires : rtmpdump-dev
 BuildRequires : rtmpdump-staticdev
+BuildRequires : rubberband-bin
+BuildRequires : rubberband-data
 BuildRequires : rubberband-dev
+BuildRequires : rubberband-lib
 BuildRequires : rubberband-staticdev
+BuildRequires : sed
 BuildRequires : setxkbmap
 BuildRequires : shaderc
 BuildRequires : shaderc-dev
+BuildRequires : shaderc-lib
 BuildRequires : shaderc-staticdev
+BuildRequires : shared-mime-info
+BuildRequires : six
 BuildRequires : snappy-dev
 BuildRequires : snappy-staticdev
+BuildRequires : solid-dev
+BuildRequires : sonnet-dev
 BuildRequires : speex-dev
 BuildRequires : speex-staticdev
 BuildRequires : speexdsp-dev
 BuildRequires : speexdsp-staticdev
+BuildRequires : sqlite-autoconf
+BuildRequires : sqlite-autoconf-dev
+BuildRequires : sqlite-autoconf-staticdev
+BuildRequires : syntax-highlighting
+BuildRequires : syntax-highlighting-data
+BuildRequires : syntax-highlighting-dev
+BuildRequires : syntax-highlighting-lib
 BuildRequires : systemd
 BuildRequires : systemd-dev
+BuildRequires : tbb
+BuildRequires : tbb-dev
+BuildRequires : tbb-lib
+BuildRequires : tesseract
+BuildRequires : tesseract-bin
+BuildRequires : tesseract-data
+BuildRequires : tesseract-dev
 BuildRequires : texinfo
+BuildRequires : tiff
+BuildRequires : tiff-dev
+BuildRequires : tiff-staticdev
+BuildRequires : tox
 BuildRequires : uchardet
 BuildRequires : uchardet-dev
 BuildRequires : uchardet-staticdev
 BuildRequires : util-linux
 BuildRequires : util-linux-dev
 BuildRequires : util-linux-staticdev
+BuildRequires : v4l-utils-dev
 BuildRequires : vamp-sdk
 BuildRequires : vamp-sdk-dev
 BuildRequires : vamp-sdk-staticdev
+BuildRequires : virtualenv
 BuildRequires : wayland
+BuildRequires : wayland-dev
 BuildRequires : weston
 BuildRequires : wmctrl
 BuildRequires : xauth
+BuildRequires : xcb-proto
+BuildRequires : xcb-proto-dev
+BuildRequires : xcb-util-cursor-dev
+BuildRequires : xcb-util-dev
+BuildRequires : xcb-util-image
+BuildRequires : xcb-util-image-dev
+BuildRequires : xcb-util-keysyms-dev
+BuildRequires : xcb-util-renderutil-dev
+BuildRequires : xcb-util-wm-dev
+BuildRequires : xcb-util-xrm-dev
 BuildRequires : xclip
+BuildRequires : xdg-dbus-proxy
+BuildRequires : xdg-desktop-portal
+BuildRequires : xdg-desktop-portal-dev
+BuildRequires : xdg-desktop-portal-gtk
+BuildRequires : xdg-desktop-portal-kde
+BuildRequires : xdg-user-dirs
+BuildRequires : xdg-user-dirs-gtk
+BuildRequires : xdg-utils
 BuildRequires : xdotool
 BuildRequires : xdpyinfo
 BuildRequires : xf86-input-libinput
@@ -561,6 +841,8 @@ BuildRequires : xkill
 BuildRequires : xmodmap
 BuildRequires : xorg-server
 BuildRequires : xorg-server-dev
+BuildRequires : xorgproto
+BuildRequires : xorgproto-dev
 BuildRequires : xprop
 BuildRequires : xrandr
 BuildRequires : xrdb
@@ -573,8 +855,12 @@ BuildRequires : xsetroot
 BuildRequires : xvfb-run
 BuildRequires : xwd
 BuildRequires : xwininfo
+BuildRequires : xz
 BuildRequires : xz-dev
 BuildRequires : xz-staticdev
+BuildRequires : yaml-cpp
+BuildRequires : yaml-cpp-dev
+BuildRequires : zlib
 BuildRequires : zlib-dev
 BuildRequires : zlib-staticdev
 BuildRequires : zstd-dev
@@ -592,70 +878,17 @@ SPARC optimizations have been removed in
 commit b4dd424d96f09f9bafb88e47f37df65dc4529143
 The last revission with the optimizations is fb1b70c1ed50951c5fc1a309c3c446b2eaaf564b
 
-%package bin
-Summary: bin components for the ffmpeg package.
-Group: Binaries
-Requires: ffmpeg-data = %{version}-%{release}
-
-%description bin
-bin components for the ffmpeg package.
-
-
-%package data
-Summary: data components for the ffmpeg package.
-Group: Data
-
-%description data
-data components for the ffmpeg package.
-
-
-%package dev
-Summary: dev components for the ffmpeg package.
-Group: Development
-Requires: ffmpeg-lib = %{version}-%{release}
-Requires: ffmpeg-bin = %{version}-%{release}
-Requires: ffmpeg-data = %{version}-%{release}
-Provides: ffmpeg-devel = %{version}-%{release}
-Requires: ffmpeg = %{version}-%{release}
-
-%description dev
-dev components for the ffmpeg package.
-
-
-%package lib
-Summary: lib components for the ffmpeg package.
-Group: Libraries
-Requires: ffmpeg-data = %{version}-%{release}
-
-%description lib
-lib components for the ffmpeg package.
-
-
-%package staticdev
-Summary: staticdev components for the ffmpeg package.
-Group: Default
-Requires: ffmpeg-dev = %{version}-%{release}
-
-%description staticdev
-staticdev components for the ffmpeg package.
-
-
 %prep
 %setup -q -n ffmpeg
 cd %{_builddir}/ffmpeg
 
 %build
-## build_prepend content
-#find . -type f -name 'configure' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-#find . -type f -name 'Makefile' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-#find . -type f -name '*.mak' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-## build_prepend end
 unset http_proxy
 unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1600367946
+export SOURCE_DATE_EPOCH=1622627099
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -686,18 +919,132 @@ export VDPAU_DRIVER=nvidia
 export LIBVA_DRIVER_NAME=vdpau
 export LIBVA_DRIVERS_PATH=/usr/lib64/dri
 ## altflags1 end
-##
-%define _lto_cflags 1
-##
-./configure --prefix=/usr --libdir=/usr/lib64 --pkg-config-flags="--static" --ar="gcc-ar" --nm="gcc-nm" --ranlib="gcc-ranlib" --disable-debug --disable-doc --disable-htmlpages --disable-manpages --disable-podpages --disable-stripping --disable-txtpages --disable-shared --enable-static --enable-pic --enable-lto --enable-asm --enable-pthreads --disable-avx512 --enable-avx2 --enable-gpl --enable-version3 --enable-nonfree --enable-hardcoded-tables --enable-runtime-cpudetect --cpu=native --disable-alsa --disable-gnutls --disable-outdev=pulse --disable-outdev=alsa --disable-indev=jack --disable-indev=alsa --disable-indev=iec61883 --disable-indev=libdc1394 --disable-indev=pulse --enable-avcodec --enable-avdevice --enable-avfilter --enable-avformat --enable-avutil --enable-bzlib --enable-cuda --enable-cuda-nvcc --enable-cuvid --enable-error-resilience --enable-lzo --enable-ffmpeg --enable-ffnvcodec --enable-ffplay --enable-gmp --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libdrm --enable-libfdk-aac --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libmfx --enable-libsvtav1 --enable-libmp3lame --enable-libnpp --enable-libopus --enable-librtmp --enable-libsnappy --enable-libspeex --enable-libsrt --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libopenjpeg --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-lzma --enable-network --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-openssl --enable-postproc --enable-swresample --enable-swscale --enable-vaapi --enable-vapoursynth --enable-vdpau --enable-zlib --extra-cflags="-I/usr/cuda/include" --nvccflags="-O3 -Xptxas -O3,-v -cudart=static -ccbin=/usr/bin/gcc-9 -Xcompiler -O3,-static,-march=native,-flto=16,-fuse-linker-plugin,-fasynchronous-unwind-tables -Xlinker -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-static -Xarchive -flto=16,-fuse-linker-plugin,-march=native,-static" --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib -L/usr/nvidia/lib/vdpau -L/usr/lib64/dri -L/usr/cuda/lib64" --extra-libs="-Wl,-Bstatic /usr/cuda/lib64/libcublasLt_static.a /usr/cuda/lib64/libcublas_static.a /usr/cuda/lib64/libcudadevrt.a /usr/cuda/lib64/libcudart_static.a /usr/cuda/lib64/libcufft_static_nocallback.a /usr/cuda/lib64/libcufftw_static.a /usr/cuda/lib64/libculibos.a /usr/cuda/lib64/libcurand_static.a /usr/cuda/lib64/libcusolver_static.a /usr/cuda/lib64/libcusparse_static.a /usr/cuda/lib64/liblapack_static.a /usr/cuda/lib64/libmetis_static.a /usr/cuda/lib64/libnppc_static.a /usr/cuda/lib64/libnppial_static.a /usr/cuda/lib64/libnppicc_static.a /usr/cuda/lib64/libnppidei_static.a /usr/cuda/lib64/libnppif_static.a /usr/cuda/lib64/libnppig_static.a /usr/cuda/lib64/libnppim_static.a /usr/cuda/lib64/libnppist_static.a /usr/cuda/lib64/libnppisu_static.a /usr/cuda/lib64/libnppitc_static.a /usr/cuda/lib64/libnpps_static.a /usr/cuda/lib64/libnvjpeg_static.a -Wl,-Bdynamic -L/usr/nvidia/lib -lGL -lEGL -lGLX -lnvcuvid -L/usr/lib64 -pthread -lpthread -lrt -lc -ldl -lgcc -lgcc_s -lstdc++ -lmvec -lm"
+./configure \
+    --prefix=/usr \
+    --libdir=/usr/lib64 \
+    --pkg-config-flags="--static" \
+    --ar="/usr/bin/gcc-ar" \
+    --nm="/usr/bin/gcc-nm" \
+    --ranlib="/usr/bin/gcc-ranlib" \
+    --cc=/usr/bin/gcc \
+    --cxx=/usr/bin/g++ \
+    --disable-shared \
+    --disable-debug \
+    --disable-avx512 \
+    --disable-podpages \
+    --disable-stripping \
+    --disable-gnutls \
+    --disable-runtime-cpudetect \
+    --disable-libjack \
+    --disable-cuda-llvm \
+    --disable-libmfx \
+    --cpu=native \
+    --enable-optimizations \
+    --enable-avx2 \
+    --enable-doc \
+    --enable-htmlpages \
+    --enable-manpages \
+    --enable-txtpages \
+    --enable-static \
+    --enable-pic \
+    --enable-lto \
+    --enable-libpulse \
+    --enable-asm \
+    --enable-pthreads \
+    --enable-gpl \
+    --enable-version3 \
+    --enable-nonfree \
+    --enable-hardcoded-tables \
+    --enable-sdl2 \
+    --enable-outdev=sdl2 \
+    --enable-avcodec \
+    --enable-avdevice \
+    --enable-avfilter \
+    --enable-avformat \
+    --enable-avutil \
+    --enable-dct \
+    --enable-dwt \
+    --enable-lsp \
+    --enable-lzo \
+    --enable-mdct \
+    --enable-rdft \
+    --enable-fft \
+    --enable-faan \
+    --enable-pixelutils \
+    --enable-bzlib \
+    --enable-cuda \
+    --enable-cuda-nvcc \
+    --enable-cuvid \
+    --enable-error-resilience \
+    --enable-ffmpeg \
+    --enable-ffnvcodec \
+    --enable-programs \
+    --enable-ffplay \
+    --enable-gmp \
+    --enable-libgsm \
+    --enable-avisynth \
+    --enable-alsa \
+    --enable-libglslang \
+    --enable-libopencv \
+    --enable-librsvg \
+    --enable-ladspa \
+    --enable-librubberband \
+    --enable-libaom \
+    --enable-libass \
+    --enable-libbluray \
+    --enable-libdav1d \
+    --enable-libdrm \
+    --enable-libfdk-aac \
+    --enable-libfontconfig \
+    --enable-libfreetype \
+    --enable-libfribidi \
+    --enable-libsvtav1 \
+    --enable-libmp3lame \
+    --enable-libnpp \
+    --enable-libopus \
+    --enable-librtmp \
+    --enable-libsnappy \
+    --enable-libspeex \
+    --enable-libsrt \
+    --enable-libtheora \
+    --enable-libvorbis \
+    --enable-libvpx \
+    --enable-libwebp \
+    --enable-libx264 \
+    --enable-libx265 \
+    --enable-libopenjpeg \
+    --enable-libxcb \
+    --enable-libxcb-shm \
+    --enable-libxcb-xfixes \
+    --enable-libxcb-shape \
+    --enable-libxml2 \
+    --enable-libxvid \
+    --enable-libzimg \
+    --enable-lzma \
+    --enable-network \
+    --enable-nvdec \
+    --enable-nvenc \
+    --enable-opencl \
+    --enable-opengl \
+    --enable-openssl \
+    --enable-postproc \
+    --enable-swresample \
+    --enable-swscale \
+    --enable-vaapi \
+    --enable-vapoursynth \
+    --enable-vdpau \
+    --enable-zlib \
+
+
+    ./configure --prefix=/usr --libdir=/usr/lib64 --pkg-config-flags="--static" --ar="gcc-ar" --nm="gcc-nm" --ranlib="gcc-ranlib" --disable-debug --disable-doc --disable-htmlpages --disable-manpages --disable-podpages --disable-stripping --disable-txtpages --disable-shared --enable-static --enable-pic --enable-lto --enable-asm --enable-pthreads --disable-avx512 --enable-avx2 --enable-gpl --enable-version3 --enable-nonfree --enable-hardcoded-tables --enable-runtime-cpudetect --cpu=native --disable-alsa --disable-gnutls --disable-outdev=pulse --disable-outdev=alsa --disable-indev=jack --disable-indev=alsa --disable-indev=iec61883 --disable-indev=libdc1394 --disable-indev=pulse --enable-avcodec --enable-avdevice --enable-avfilter --enable-avformat --enable-avutil --enable-bzlib --enable-cuda --enable-cuda-nvcc --enable-cuvid --enable-error-resilience --enable-lzo --enable-ffmpeg --enable-ffnvcodec --enable-ffplay --enable-gmp --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libdrm --enable-libfdk-aac --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libmfx --enable-libsvtav1 --enable-libmp3lame --enable-libnpp --enable-libopus --enable-librtmp --enable-libsnappy --enable-libspeex --enable-libsrt --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libopenjpeg --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-lzma --enable-network --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-openssl --enable-postproc --enable-swresample --enable-swscale --enable-vaapi --enable-vapoursynth --enable-vdpau --enable-zlib --extra-cflags="-I/usr/cuda/include" --nvccflags="-O3 -Xptxas -O3,-v -cudart=static -ccbin=/usr/bin/gcc-9 -Xcompiler -O3,-static,-march=native,-flto=16,-fuse-linker-plugin,-fasynchronous-unwind-tables -Xlinker -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-static -Xarchive -flto=16,-fuse-linker-plugin,-march=native,-static" --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib -L/usr/nvidia/lib/vdpau -L/usr/lib64/dri -L/usr/cuda/lib64" --extra-libs="-Wl,-Bstatic /usr/cuda/lib64/libcublasLt_static.a /usr/cuda/lib64/libcublas_static.a /usr/cuda/lib64/libcudadevrt.a /usr/cuda/lib64/libcudart_static.a /usr/cuda/lib64/libcufft_static_nocallback.a /usr/cuda/lib64/libcufftw_static.a /usr/cuda/lib64/libculibos.a /usr/cuda/lib64/libcurand_static.a /usr/cuda/lib64/libcusolver_static.a /usr/cuda/lib64/libcusparse_static.a /usr/cuda/lib64/liblapack_static.a /usr/cuda/lib64/libmetis_static.a /usr/cuda/lib64/libnppc_static.a /usr/cuda/lib64/libnppial_static.a /usr/cuda/lib64/libnppicc_static.a /usr/cuda/lib64/libnppidei_static.a /usr/cuda/lib64/libnppif_static.a /usr/cuda/lib64/libnppig_static.a /usr/cuda/lib64/libnppim_static.a /usr/cuda/lib64/libnppist_static.a /usr/cuda/lib64/libnppisu_static.a /usr/cuda/lib64/libnppitc_static.a /usr/cuda/lib64/libnpps_static.a /usr/cuda/lib64/libnvjpeg_static.a -Wl,-Bdynamic -L/usr/nvidia/lib -lGL -lEGL -lGLX -lnvcuvid -L/usr/lib64 -pthread -lpthread -lrt -lc -ldl -lgcc -lgcc_s -lstdc++ -lmvec -lm"
 ## make_prepend content
 echo 'include $(SRC_PATH)/ffbuild/libffmpeg.mak' >> Makefile
 ## make_prepend end
-make  %{?_smp_mflags}  V=1 VERBOSE=1
+make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1600367946
+export SOURCE_DATE_EPOCH=1622627099
 rm -rf %{buildroot}
 %make_install
 ## install_append content
@@ -707,194 +1054,3 @@ make install-libffmpeg V=1 VERBOSE=1 DESTDIR=%{buildroot}
 
 %files
 %defattr(-,root,root,-)
-
-%files bin
-%defattr(-,root,root,-)
-/usr/bin/ffmpeg
-/usr/bin/ffplay
-/usr/bin/ffprobe
-
-%files data
-%defattr(-,root,root,-)
-/usr/share/ffmpeg/examples/Makefile
-/usr/share/ffmpeg/examples/README
-/usr/share/ffmpeg/examples/avio_list_dir.c
-/usr/share/ffmpeg/examples/avio_reading.c
-/usr/share/ffmpeg/examples/decode_audio.c
-/usr/share/ffmpeg/examples/decode_video.c
-/usr/share/ffmpeg/examples/demuxing_decoding.c
-/usr/share/ffmpeg/examples/encode_audio.c
-/usr/share/ffmpeg/examples/encode_video.c
-/usr/share/ffmpeg/examples/extract_mvs.c
-/usr/share/ffmpeg/examples/filter_audio.c
-/usr/share/ffmpeg/examples/filtering_audio.c
-/usr/share/ffmpeg/examples/filtering_video.c
-/usr/share/ffmpeg/examples/http_multiclient.c
-/usr/share/ffmpeg/examples/hw_decode.c
-/usr/share/ffmpeg/examples/metadata.c
-/usr/share/ffmpeg/examples/muxing.c
-/usr/share/ffmpeg/examples/qsvdec.c
-/usr/share/ffmpeg/examples/remuxing.c
-/usr/share/ffmpeg/examples/resampling_audio.c
-/usr/share/ffmpeg/examples/scaling_video.c
-/usr/share/ffmpeg/examples/transcode_aac.c
-/usr/share/ffmpeg/examples/transcoding.c
-/usr/share/ffmpeg/examples/vaapi_encode.c
-/usr/share/ffmpeg/examples/vaapi_transcode.c
-/usr/share/ffmpeg/ffprobe.xsd
-/usr/share/ffmpeg/libvpx-1080p.ffpreset
-/usr/share/ffmpeg/libvpx-1080p50_60.ffpreset
-/usr/share/ffmpeg/libvpx-360p.ffpreset
-/usr/share/ffmpeg/libvpx-720p.ffpreset
-/usr/share/ffmpeg/libvpx-720p50_60.ffpreset
-
-%files dev
-%defattr(-,root,root,-)
-/usr/include/libavcodec/ac3_parser.h
-/usr/include/libavcodec/adts_parser.h
-/usr/include/libavcodec/avcodec.h
-/usr/include/libavcodec/avdct.h
-/usr/include/libavcodec/avfft.h
-/usr/include/libavcodec/bsf.h
-/usr/include/libavcodec/codec.h
-/usr/include/libavcodec/codec_desc.h
-/usr/include/libavcodec/codec_id.h
-/usr/include/libavcodec/codec_par.h
-/usr/include/libavcodec/d3d11va.h
-/usr/include/libavcodec/dirac.h
-/usr/include/libavcodec/dv_profile.h
-/usr/include/libavcodec/dxva2.h
-/usr/include/libavcodec/jni.h
-/usr/include/libavcodec/mediacodec.h
-/usr/include/libavcodec/packet.h
-/usr/include/libavcodec/qsv.h
-/usr/include/libavcodec/vaapi.h
-/usr/include/libavcodec/vdpau.h
-/usr/include/libavcodec/version.h
-/usr/include/libavcodec/videotoolbox.h
-/usr/include/libavcodec/vorbis_parser.h
-/usr/include/libavcodec/xvmc.h
-/usr/include/libavdevice/avdevice.h
-/usr/include/libavdevice/version.h
-/usr/include/libavfilter/avfilter.h
-/usr/include/libavfilter/buffersink.h
-/usr/include/libavfilter/buffersrc.h
-/usr/include/libavfilter/version.h
-/usr/include/libavformat/avformat.h
-/usr/include/libavformat/avio.h
-/usr/include/libavformat/version.h
-/usr/include/libavutil/adler32.h
-/usr/include/libavutil/aes.h
-/usr/include/libavutil/aes_ctr.h
-/usr/include/libavutil/attributes.h
-/usr/include/libavutil/audio_fifo.h
-/usr/include/libavutil/avassert.h
-/usr/include/libavutil/avconfig.h
-/usr/include/libavutil/avstring.h
-/usr/include/libavutil/avutil.h
-/usr/include/libavutil/base64.h
-/usr/include/libavutil/blowfish.h
-/usr/include/libavutil/bprint.h
-/usr/include/libavutil/bswap.h
-/usr/include/libavutil/buffer.h
-/usr/include/libavutil/camellia.h
-/usr/include/libavutil/cast5.h
-/usr/include/libavutil/channel_layout.h
-/usr/include/libavutil/common.h
-/usr/include/libavutil/cpu.h
-/usr/include/libavutil/crc.h
-/usr/include/libavutil/des.h
-/usr/include/libavutil/dict.h
-/usr/include/libavutil/display.h
-/usr/include/libavutil/dovi_meta.h
-/usr/include/libavutil/downmix_info.h
-/usr/include/libavutil/encryption_info.h
-/usr/include/libavutil/error.h
-/usr/include/libavutil/eval.h
-/usr/include/libavutil/ffversion.h
-/usr/include/libavutil/fifo.h
-/usr/include/libavutil/file.h
-/usr/include/libavutil/frame.h
-/usr/include/libavutil/hash.h
-/usr/include/libavutil/hdr_dynamic_metadata.h
-/usr/include/libavutil/hmac.h
-/usr/include/libavutil/hwcontext.h
-/usr/include/libavutil/hwcontext_cuda.h
-/usr/include/libavutil/hwcontext_d3d11va.h
-/usr/include/libavutil/hwcontext_drm.h
-/usr/include/libavutil/hwcontext_dxva2.h
-/usr/include/libavutil/hwcontext_mediacodec.h
-/usr/include/libavutil/hwcontext_opencl.h
-/usr/include/libavutil/hwcontext_qsv.h
-/usr/include/libavutil/hwcontext_vaapi.h
-/usr/include/libavutil/hwcontext_vdpau.h
-/usr/include/libavutil/hwcontext_videotoolbox.h
-/usr/include/libavutil/hwcontext_vulkan.h
-/usr/include/libavutil/imgutils.h
-/usr/include/libavutil/intfloat.h
-/usr/include/libavutil/intreadwrite.h
-/usr/include/libavutil/lfg.h
-/usr/include/libavutil/log.h
-/usr/include/libavutil/lzo.h
-/usr/include/libavutil/macros.h
-/usr/include/libavutil/mastering_display_metadata.h
-/usr/include/libavutil/mathematics.h
-/usr/include/libavutil/md5.h
-/usr/include/libavutil/mem.h
-/usr/include/libavutil/motion_vector.h
-/usr/include/libavutil/murmur3.h
-/usr/include/libavutil/opt.h
-/usr/include/libavutil/parseutils.h
-/usr/include/libavutil/pixdesc.h
-/usr/include/libavutil/pixelutils.h
-/usr/include/libavutil/pixfmt.h
-/usr/include/libavutil/random_seed.h
-/usr/include/libavutil/rational.h
-/usr/include/libavutil/rc4.h
-/usr/include/libavutil/replaygain.h
-/usr/include/libavutil/ripemd.h
-/usr/include/libavutil/samplefmt.h
-/usr/include/libavutil/sha.h
-/usr/include/libavutil/sha512.h
-/usr/include/libavutil/spherical.h
-/usr/include/libavutil/stereo3d.h
-/usr/include/libavutil/tea.h
-/usr/include/libavutil/threadmessage.h
-/usr/include/libavutil/time.h
-/usr/include/libavutil/timecode.h
-/usr/include/libavutil/timestamp.h
-/usr/include/libavutil/tree.h
-/usr/include/libavutil/twofish.h
-/usr/include/libavutil/tx.h
-/usr/include/libavutil/version.h
-/usr/include/libavutil/video_enc_params.h
-/usr/include/libavutil/xtea.h
-/usr/include/libpostproc/postprocess.h
-/usr/include/libpostproc/version.h
-/usr/include/libswresample/swresample.h
-/usr/include/libswresample/version.h
-/usr/include/libswscale/swscale.h
-/usr/include/libswscale/version.h
-/usr/lib64/pkgconfig/libavcodec.pc
-/usr/lib64/pkgconfig/libavdevice.pc
-/usr/lib64/pkgconfig/libavfilter.pc
-/usr/lib64/pkgconfig/libavformat.pc
-/usr/lib64/pkgconfig/libavutil.pc
-/usr/lib64/pkgconfig/libpostproc.pc
-/usr/lib64/pkgconfig/libswresample.pc
-/usr/lib64/pkgconfig/libswscale.pc
-
-%files lib
-%defattr(-,root,root,-)
-/usr/lib64/chromium/libffmpeg.so
-
-%files staticdev
-%defattr(-,root,root,-)
-/usr/lib64/libavcodec.a
-/usr/lib64/libavdevice.a
-/usr/lib64/libavfilter.a
-/usr/lib64/libavformat.a
-/usr/lib64/libavutil.a
-/usr/lib64/libpostproc.a
-/usr/lib64/libswresample.a
-/usr/lib64/libswscale.a
