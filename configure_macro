@@ -5,6 +5,8 @@
     --ar="/usr/bin/gcc-ar" \
     --nm="/usr/bin/gcc-nm" \
     --ranlib="/usr/bin/gcc-ranlib" \
+    --cc=/usr/bin/gcc \
+    --cxx=/usr/bin/g++ \
     --disable-shared \
     --disable-debug \
     --disable-avx512 \
@@ -16,6 +18,7 @@
     --disable-cuda-llvm \
     --disable-libmfx \
     --cpu=native \
+    --enable-optimizations \
     --enable-avx2 \
     --enable-doc \
     --enable-htmlpages \
