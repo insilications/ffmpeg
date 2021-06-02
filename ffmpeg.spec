@@ -68,11 +68,9 @@ BuildRequires : ca-certs-static
 BuildRequires : cairo
 BuildRequires : cairo-dev
 BuildRequires : cairo-lib
-BuildRequires : clazy
 BuildRequires : cmake
 BuildRequires : compat-gcc-10
 BuildRequires : compat-gcc-10-dev
-BuildRequires : cppcheck
 BuildRequires : curl-dev
 BuildRequires : dav1d-dev
 BuildRequires : dav1d-staticdev
@@ -476,9 +474,6 @@ BuildRequires : pkgconfig(cairo-xlib-xcb)
 BuildRequires : pkgconfig(cairo-xlib-xrender)
 BuildRequires : pkgconfig(dav1d)
 BuildRequires : pkgconfig(dbus-1)
-BuildRequires : pkgconfig(dbus-c++-1)
-BuildRequires : pkgconfig(dbus-c++-ecore-1)
-BuildRequires : pkgconfig(dbus-c++-glib-1)
 BuildRequires : pkgconfig(dri)
 BuildRequires : pkgconfig(dri2proto)
 BuildRequires : pkgconfig(dri3proto)
@@ -526,19 +521,13 @@ BuildRequires : pkgconfig(libconfig)
 BuildRequires : pkgconfig(libconfig++)
 BuildRequires : pkgconfig(libcrypto)
 BuildRequires : pkgconfig(libdrm)
-BuildRequires : pkgconfig(libdrm_amdgpu)
-BuildRequires : pkgconfig(libdrm_intel)
-BuildRequires : pkgconfig(libdrm_nouveau)
-BuildRequires : pkgconfig(libdrm_radeon)
 BuildRequires : pkgconfig(libdvbv5)
-BuildRequires : pkgconfig(libffado)
 BuildRequires : pkgconfig(libffi)
 BuildRequires : pkgconfig(libidn2)
 BuildRequires : pkgconfig(libjpeg)
 BuildRequires : pkgconfig(libkms)
 BuildRequires : pkgconfig(liblsmash)
 BuildRequires : pkgconfig(liblzma)
-BuildRequires : pkgconfig(libmfx)
 BuildRequires : pkgconfig(libopenjp2)
 BuildRequires : pkgconfig(libpcre)
 BuildRequires : pkgconfig(libpcre16)
@@ -567,7 +556,6 @@ BuildRequires : pkgconfig(libwebp)
 BuildRequires : pkgconfig(libwebpdecoder)
 BuildRequires : pkgconfig(libwebpdemux)
 BuildRequires : pkgconfig(libwebpmux)
-BuildRequires : pkgconfig(libxml++-3.0)
 BuildRequires : pkgconfig(libxml-2.0)
 BuildRequires : pkgconfig(mm-common-libstdc++)
 BuildRequires : pkgconfig(mm-common-util)
@@ -596,7 +584,6 @@ BuildRequires : pkgconfig(uuid)
 BuildRequires : pkgconfig(vapoursynth)
 BuildRequires : pkgconfig(vapoursynth-script)
 BuildRequires : pkgconfig(vdpau)
-BuildRequires : pkgconfig(vidstab)
 BuildRequires : pkgconfig(vorbis)
 BuildRequires : pkgconfig(vpx)
 BuildRequires : pkgconfig(vulkan)
@@ -667,7 +654,6 @@ BuildRequires : procps-ng
 BuildRequires : pugixml-dev
 BuildRequires : pulseaudio
 BuildRequires : pulseaudio-dev
-BuildRequires : pulsectl
 BuildRequires : py-python
 BuildRequires : pytest
 BuildRequires : python-pkgconfig
@@ -805,8 +791,6 @@ BuildRequires : xcb-proto
 BuildRequires : xcb-proto-dev
 BuildRequires : xcb-util-cursor-dev
 BuildRequires : xcb-util-dev
-BuildRequires : xcb-util-image
-BuildRequires : xcb-util-image-dev
 BuildRequires : xcb-util-keysyms-dev
 BuildRequires : xcb-util-renderutil-dev
 BuildRequires : xcb-util-wm-dev
@@ -888,7 +872,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622627099
+export SOURCE_DATE_EPOCH=1622627936
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -1034,9 +1018,9 @@ export LIBVA_DRIVERS_PATH=/usr/lib64/dri
     --enable-vapoursynth \
     --enable-vdpau \
     --enable-zlib \
-
-
-    ./configure --prefix=/usr --libdir=/usr/lib64 --pkg-config-flags="--static" --ar="gcc-ar" --nm="gcc-nm" --ranlib="gcc-ranlib" --disable-debug --disable-doc --disable-htmlpages --disable-manpages --disable-podpages --disable-stripping --disable-txtpages --disable-shared --enable-static --enable-pic --enable-lto --enable-asm --enable-pthreads --disable-avx512 --enable-avx2 --enable-gpl --enable-version3 --enable-nonfree --enable-hardcoded-tables --enable-runtime-cpudetect --cpu=native --disable-alsa --disable-gnutls --disable-outdev=pulse --disable-outdev=alsa --disable-indev=jack --disable-indev=alsa --disable-indev=iec61883 --disable-indev=libdc1394 --disable-indev=pulse --enable-avcodec --enable-avdevice --enable-avfilter --enable-avformat --enable-avutil --enable-bzlib --enable-cuda --enable-cuda-nvcc --enable-cuvid --enable-error-resilience --enable-lzo --enable-ffmpeg --enable-ffnvcodec --enable-ffplay --enable-gmp --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libdav1d --enable-libdrm --enable-libfdk-aac --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libmfx --enable-libsvtav1 --enable-libmp3lame --enable-libnpp --enable-libopus --enable-librtmp --enable-libsnappy --enable-libspeex --enable-libsrt --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libopenjpeg --enable-libxcb --enable-libxml2 --enable-libxvid --enable-libzimg --enable-lzma --enable-network --enable-nvdec --enable-nvenc --enable-opencl --enable-opengl --enable-openssl --enable-postproc --enable-swresample --enable-swscale --enable-vaapi --enable-vapoursynth --enable-vdpau --enable-zlib --extra-cflags="-I/usr/cuda/include" --nvccflags="-O3 -Xptxas -O3,-v -cudart=static -ccbin=/usr/bin/gcc-9 -Xcompiler -O3,-static,-march=native,-flto=16,-fuse-linker-plugin,-fasynchronous-unwind-tables -Xlinker -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-static -Xarchive -flto=16,-fuse-linker-plugin,-march=native,-static" --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib -L/usr/nvidia/lib/vdpau -L/usr/lib64/dri -L/usr/cuda/lib64" --extra-libs="-Wl,-Bstatic /usr/cuda/lib64/libcublasLt_static.a /usr/cuda/lib64/libcublas_static.a /usr/cuda/lib64/libcudadevrt.a /usr/cuda/lib64/libcudart_static.a /usr/cuda/lib64/libcufft_static_nocallback.a /usr/cuda/lib64/libcufftw_static.a /usr/cuda/lib64/libculibos.a /usr/cuda/lib64/libcurand_static.a /usr/cuda/lib64/libcusolver_static.a /usr/cuda/lib64/libcusparse_static.a /usr/cuda/lib64/liblapack_static.a /usr/cuda/lib64/libmetis_static.a /usr/cuda/lib64/libnppc_static.a /usr/cuda/lib64/libnppial_static.a /usr/cuda/lib64/libnppicc_static.a /usr/cuda/lib64/libnppidei_static.a /usr/cuda/lib64/libnppif_static.a /usr/cuda/lib64/libnppig_static.a /usr/cuda/lib64/libnppim_static.a /usr/cuda/lib64/libnppist_static.a /usr/cuda/lib64/libnppisu_static.a /usr/cuda/lib64/libnppitc_static.a /usr/cuda/lib64/libnpps_static.a /usr/cuda/lib64/libnvjpeg_static.a -Wl,-Bdynamic -L/usr/nvidia/lib -lGL -lEGL -lGLX -lnvcuvid -L/usr/lib64 -pthread -lpthread -lrt -lc -ldl -lgcc -lgcc_s -lstdc++ -lmvec -lm"
+    --extra-cflags="-I/usr/local/cuda/include" \
+    --nvccflags="-O3 -Xptxas -O3,-v -cudart=static -ccbin=/usr/bin/gcc-10 -Xcompiler -O3,-static,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-flto=16,-fuse-linker-plugin,-ffat-lto-objects,-fasynchronous-unwind-tables -Xlinker -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static -Xarchive -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static" \
+    --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib64/vdpau -L/usr/lib64/dri -L/usr/cuda/lib64"
 ## make_prepend content
 echo 'include $(SRC_PATH)/ffbuild/libffmpeg.mak' >> Makefile
 ## make_prepend end
@@ -1044,7 +1028,7 @@ make  %{?_smp_mflags}  V=1 VERBOSE=1  V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1622627099
+export SOURCE_DATE_EPOCH=1622627936
 rm -rf %{buildroot}
 %make_install
 ## install_append content

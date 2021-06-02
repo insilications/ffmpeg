@@ -145,7 +145,6 @@ SvtAv1Enc
 SvtHevcEnc
 systemd
 theora
-udfread
 uuid
 valgrind
 vapoursynth
