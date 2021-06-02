@@ -437,7 +437,6 @@ procps-ng
 pugixml-dev
 pulseaudio
 pulseaudio-dev
-pulsectl
 Pygments
 py-python
 pytest
@@ -594,8 +593,6 @@ xcb-proto
 xcb-proto-dev
 xcb-util-cursor-dev
 xcb-util-dev
-xcb-util-image
-xcb-util-image-dev
 xcb-util-keysyms-dev
 xcb-util-renderutil-dev
 xcb-util-wm-dev

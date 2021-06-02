@@ -34,9 +34,6 @@ cairo-xlib-xcb
 cairo-xlib-xrender
 dav1d
 dbus-1
-dbus-c++-1
-dbus-c++-ecore-1
-dbus-c++-glib-1
 dri
 dri2proto
 dri3proto
@@ -84,19 +81,13 @@ libconfig
 libconfig++
 libcrypto
 libdrm
-libdrm_amdgpu
-libdrm_intel
-libdrm_nouveau
-libdrm_radeon
 libdvbv5
-libffado
 libffi
 libidn2
 libjpeg
 libkms
 liblsmash
 liblzma
-libmfx
 libopenjp2
 libpcre
 libpcre16
@@ -126,7 +117,6 @@ libwebpdecoder
 libwebpdemux
 libwebpmux
 libxml-2.0
-libxml++-3.0
 Magick++
 MagickCore
 MagickWand
@@ -161,7 +151,6 @@ valgrind
 vapoursynth
 vapoursynth-script
 vdpau
-vidstab
 vorbis
 vpx
 vulkan
