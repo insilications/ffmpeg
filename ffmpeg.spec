@@ -776,7 +776,6 @@ BuildRequires : uchardet-staticdev
 BuildRequires : util-linux
 BuildRequires : util-linux-dev
 BuildRequires : util-linux-staticdev
-BuildRequires : v4l-utils-dev
 BuildRequires : vamp-sdk
 BuildRequires : vamp-sdk-dev
 BuildRequires : vamp-sdk-staticdev
@@ -871,7 +870,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622631969
+export SOURCE_DATE_EPOCH=1622632088
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -921,6 +920,7 @@ export PATH="/usr/local/cuda/bin:/usr/nvidia/bin:/usr/bin/haswell:/usr/bin:/usr/
     --disable-libjack \
     --disable-cuda-llvm \
     --disable-libmfx \
+    --disable-libv4l2 \
     --cpu=native \
     --enable-optimizations \
     --enable-avx2 \
@@ -1027,7 +1027,7 @@ make -j16 V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1622631969
+export SOURCE_DATE_EPOCH=1622632088
 rm -rf %{buildroot}
 %make_install
 ## install_append content

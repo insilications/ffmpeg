@@ -56,6 +56,7 @@
     --enable-cuda-nvcc \
     --enable-cuvid \
     --enable-error-resilience \
+    --disable-safe-bitstream-reader \
     --enable-ffmpeg \
     --enable-ffnvcodec \
     --enable-ffplay \
