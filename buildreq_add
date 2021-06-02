@@ -135,9 +135,13 @@ gtk4-dev
 gtk4-lib
 gtk+-data
 gtk+-lib
+h5py
 harfbuzz-dev
 harfbuzz-lib
 harfbuzz-staticdev
+hdf5
+hdf5-dev
+hdf5-staticdev
 icu4c-dev
 icu4c-lib
 ImageMagick
