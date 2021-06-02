@@ -639,6 +639,8 @@ xrandr
 xrdb
 xrdp
 xrestop
+glog
+glog-dev
 xscreensaver
 xsel
 xset
