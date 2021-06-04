@@ -4,10 +4,10 @@
 #
 %define keepstatic 1
 Name     : ffmpeg
-Version  : 21.06.03
+Version  : 4.4
 Release  : 18
-URL      : file:///aot/build/clearlinux/packages/ffmpeg/ffmpeg-v21.06.03.tar.gz
-Source0  : file:///aot/build/clearlinux/packages/ffmpeg/ffmpeg-v21.06.03.tar.gz
+URL      : file:///aot/build/clearlinux/packages/ffmpeg/ffmpeg-v4.4.tar.gz
+Source0  : file:///aot/build/clearlinux/packages/ffmpeg/ffmpeg-v4.4.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
@@ -877,7 +877,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622804636
+export SOURCE_DATE_EPOCH=1622805588
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -1207,7 +1207,7 @@ fi
 
 
 %install
-export SOURCE_DATE_EPOCH=1622804636
+export SOURCE_DATE_EPOCH=1622805588
 rm -rf %{buildroot}
 %make_install
 ## install_append content

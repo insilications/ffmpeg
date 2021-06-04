@@ -1,5 +1,5 @@
 PKG_NAME := ffmpeg
-URL = https://git.ffmpeg.org/ffmpeg.git
+URL = https://github.com/insilications/ffmpeg-clr.git
 ARCHIVES = 
 ARCHIVES_GIT = 
 

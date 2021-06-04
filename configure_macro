@@ -18,7 +18,6 @@
     --disable-cuda-llvm \
     --disable-libmfx \
     --disable-libv4l2 \
-    --disable-libopencv \
     --cpu=native \
     --enable-optimizations \
     --enable-avx2 \
@@ -100,6 +99,7 @@
     --enable-libxvid \
     --enable-libzimg \
     --enable-lzma \
+    --enable-libopencv \
     --enable-network \
     --enable-nvdec \
     --enable-nvenc \
