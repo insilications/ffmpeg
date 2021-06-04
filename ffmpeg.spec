@@ -4,10 +4,10 @@
 #
 %define keepstatic 1
 Name     : ffmpeg
-Version  : 21.06.02
+Version  : 21.06.03
 Release  : 18
-URL      : file:///aot/build/clearlinux/packages/ffmpeg/ffmpeg-v21.06.02.tar.gz
-Source0  : file:///aot/build/clearlinux/packages/ffmpeg/ffmpeg-v21.06.02.tar.gz
+URL      : file:///aot/build/clearlinux/packages/ffmpeg/ffmpeg-v21.06.03.tar.gz
+Source0  : file:///aot/build/clearlinux/packages/ffmpeg/ffmpeg-v21.06.03.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
@@ -388,6 +388,13 @@ BuildRequires : opencl-headers
 BuildRequires : opencl-headers-data
 BuildRequires : opencl-headers-debuginfo
 BuildRequires : opencl-headers-dev
+BuildRequires : opencv
+BuildRequires : opencv-bin
+BuildRequires : opencv-data
+BuildRequires : opencv-dev
+BuildRequires : opencv-python
+BuildRequires : opencv-python3
+BuildRequires : opencv-staticdev
 BuildRequires : openjdk13
 BuildRequires : openjdk13-dev
 BuildRequires : openjpeg-dev
@@ -870,7 +877,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622632415
+export SOURCE_DATE_EPOCH=1622802418
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -1028,7 +1035,7 @@ make -j16 V=1 VERBOSE=1
 
 
 %install
-export SOURCE_DATE_EPOCH=1622632415
+export SOURCE_DATE_EPOCH=1622802418
 rm -rf %{buildroot}
 %make_install
 ## install_append content
