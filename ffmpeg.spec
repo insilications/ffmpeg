@@ -877,7 +877,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622805588
+export SOURCE_DATE_EPOCH=1622806296
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -949,7 +949,6 @@ export LDFLAGS="${LDFLAGS_GENERATE}"
     --disable-cuda-llvm \
     --disable-libmfx \
     --disable-libv4l2 \
-    --disable-libopencv \
     --cpu=native \
     --enable-optimizations \
     --enable-avx2 \
@@ -1031,6 +1030,7 @@ export LDFLAGS="${LDFLAGS_GENERATE}"
     --enable-libxvid \
     --enable-libzimg \
     --enable-lzma \
+    --enable-libopencv \
     --enable-network \
     --enable-nvdec \
     --enable-nvenc \
@@ -1044,7 +1044,7 @@ export LDFLAGS="${LDFLAGS_GENERATE}"
     --enable-vapoursynth \
     --enable-vdpau \
     --enable-zlib \
-    --extra-cflags="-I/usr/local/cuda/include" \
+    --extra-cflags="-I/usr/local/cuda/include -I/usr/include/opencv4" \
     --nvccflags="-O3 -Xptxas -O3,-v -cudart=static -ccbin=/usr/bin/gcc-10 -Xcompiler -O3,-static,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-flto=16,-fuse-linker-plugin,-ffat-lto-objects,-fasynchronous-unwind-tables -Xlinker -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static -Xarchive -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static" \
     --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib64/vdpau -L/usr/lib64/dri -L/usr/local/cuda/lib64"
 ## make_prepend content
@@ -1180,6 +1180,7 @@ export LDFLAGS="${LDFLAGS_USE}"
     --enable-libxvid \
     --enable-libzimg \
     --enable-lzma \
+    --enable-libopencv \
     --enable-network \
     --enable-nvdec \
     --enable-nvenc \
@@ -1193,7 +1194,7 @@ export LDFLAGS="${LDFLAGS_USE}"
     --enable-vapoursynth \
     --enable-vdpau \
     --enable-zlib \
-    --extra-cflags="-I/usr/local/cuda/include" \
+    --extra-cflags="-I/usr/local/cuda/include -I/usr/include/opencv4" \
     --nvccflags="-O3 -Xptxas -O3,-v -cudart=static -ccbin=/usr/bin/gcc-10 -Xcompiler -O3,-static,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-flto=16,-fuse-linker-plugin,-ffat-lto-objects,-fasynchronous-unwind-tables -Xlinker -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static -Xarchive -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static" \
     --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib64/vdpau -L/usr/lib64/dri -L/usr/local/cuda/lib64"
 ## make_prepend content
@@ -1207,7 +1208,7 @@ fi
 
 
 %install
-export SOURCE_DATE_EPOCH=1622805588
+export SOURCE_DATE_EPOCH=1622806296
 rm -rf %{buildroot}
 %make_install
 ## install_append content
