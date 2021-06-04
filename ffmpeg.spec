@@ -877,7 +877,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622802685
+export SOURCE_DATE_EPOCH=1622804636
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -949,6 +949,7 @@ export LDFLAGS="${LDFLAGS_GENERATE}"
     --disable-cuda-llvm \
     --disable-libmfx \
     --disable-libv4l2 \
+    --disable-libopencv \
     --cpu=native \
     --enable-optimizations \
     --enable-avx2 \
@@ -1030,7 +1031,6 @@ export LDFLAGS="${LDFLAGS_GENERATE}"
     --enable-libxvid \
     --enable-libzimg \
     --enable-lzma \
-    --enable-libopencv \
     --enable-network \
     --enable-nvdec \
     --enable-nvenc \
@@ -1098,6 +1098,7 @@ export LDFLAGS="${LDFLAGS_USE}"
     --disable-cuda-llvm \
     --disable-libmfx \
     --disable-libv4l2 \
+    --disable-libopencv \
     --cpu=native \
     --enable-optimizations \
     --enable-avx2 \
@@ -1179,7 +1180,6 @@ export LDFLAGS="${LDFLAGS_USE}"
     --enable-libxvid \
     --enable-libzimg \
     --enable-lzma \
-    --enable-libopencv \
     --enable-network \
     --enable-nvdec \
     --enable-nvenc \
@@ -1207,7 +1207,7 @@ fi
 
 
 %install
-export SOURCE_DATE_EPOCH=1622802685
+export SOURCE_DATE_EPOCH=1622804636
 rm -rf %{buildroot}
 %make_install
 ## install_append content
