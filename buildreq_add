@@ -111,6 +111,8 @@ glib-dev
 glib-dev32
 glib-lib
 glib-staticdev
+glog
+glog-dev
 glu
 glu-dev
 gmp
@@ -371,6 +373,13 @@ opencl-headers
 opencl-headers-data
 opencl-headers-debuginfo
 opencl-headers-dev
+opencv
+opencv-bin
+opencv-data
+opencv-dev
+opencv-python
+opencv-python3
+opencv-staticdev
 openjdk13
 openjdk13-dev
 openjpeg-dev
@@ -629,8 +638,6 @@ xrandr
 xrdb
 xrdp
 xrestop
-glog
-glog-dev
 xscreensaver
 xsel
 xset
