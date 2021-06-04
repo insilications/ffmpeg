@@ -34,5 +34,5 @@ export LIBRARY_PATH="$LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/us
 #
 export PATH="$PATH:/usr/local/cuda/bin:/usr/nvidia/bin:/usr/bin/haswell:/usr/bin:/usr/sbin"
 #
-export CPATH="$CPATH:/usr/local/cuda/include"
+#export CPATH="$CPATH:/usr/local/cuda/include"
 #
