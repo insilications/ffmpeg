@@ -99,6 +99,7 @@
     --enable-libxvid \
     --enable-libzimg \
     --enable-lzma \
+    --enable-opencv \
     --enable-network \
     --enable-nvdec \
     --enable-nvenc \
