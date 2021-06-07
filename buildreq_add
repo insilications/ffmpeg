@@ -140,6 +140,9 @@ gtk4
 gtk4-dev
 gtk4-lib
 gtk+-data
+gtk+-dev
+gtk-doc
+gtk-doc-dev
 gtk+-lib
 h5py
 harfbuzz-dev
