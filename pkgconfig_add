@@ -22,6 +22,9 @@ cairo-ft
 cairo-gl
 cairo-glx
 cairo-gobject
+libva
+libva-glx
+libva-x11
 cairo-pdf
 cairo-png
 cairo-ps
