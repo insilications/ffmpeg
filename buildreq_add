@@ -274,7 +274,6 @@ libusb-dev
 libva
 libva-dev
 libva-intel-driver
-libva-intel-driver-dev
 libva-lib
 libvapoursynth
 libvapoursynth-bin
