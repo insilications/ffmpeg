@@ -313,8 +313,6 @@ libXdmcp-dev
 libXdmcp-lib
 libXext-dev
 libXext-lib
-libXfixes
-libXfixes-dev
 libXfont2-dev
 libXft-dev
 libXft-lib
