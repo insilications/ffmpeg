@@ -97,6 +97,9 @@ gcc-libubsan
 gcc-locale
 gdb
 gdb-dev
+gdk-pixbuf
+gdk-pixbuf-dev
+gdk-pixbuf-staticdev
 gettext
 glib
 glib-bin
