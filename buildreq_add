@@ -379,6 +379,8 @@ openblas
 openblas-dev
 openblas-staticdev
 opencl-headers
+mm-common
+mm-common-dev
 opencl-headers-data
 opencl-headers-debuginfo
 opencl-headers-dev
@@ -398,6 +400,8 @@ openssl-dev
 openssl-lib
 openssl-staticdev
 opus-dev
+cairomm-dev
+cairomm-staticdev
 opus-staticdev
 orc-dev
 orc-staticdev
