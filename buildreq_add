@@ -49,6 +49,8 @@ ca-certs-static
 cairo
 cairo-dev
 cairo-lib
+cairomm-dev
+cairomm-staticdev
 cmake
 compat-gcc-10
 compat-gcc-10-dev
@@ -271,6 +273,7 @@ libusb-dev
 libva
 libva-dev
 libva-intel-driver
+libva-intel-driver-dev
 libva-lib
 libvapoursynth
 libvapoursynth-bin
@@ -278,6 +281,8 @@ libvapoursynth-dev
 libvapoursynth-python
 libvapoursynth-python3
 libvapoursynth-staticdev
+libva-vdpau-driver-chromium
+libva-vdpau-driver-chromium-dev
 libvdpau
 libvdpau-dev
 libvorbis
@@ -355,6 +360,7 @@ mesa
 mesa-demos
 mesa-dev
 mesa-lib
+mm-common
 mm-common-dev
 nasm
 nasm-bin
@@ -379,8 +385,6 @@ openblas
 openblas-dev
 openblas-staticdev
 opencl-headers
-mm-common
-mm-common-dev
 opencl-headers-data
 opencl-headers-debuginfo
 opencl-headers-dev
@@ -400,8 +404,6 @@ openssl-dev
 openssl-lib
 openssl-staticdev
 opus-dev
-cairomm-dev
-cairomm-staticdev
 opus-staticdev
 orc-dev
 orc-staticdev
