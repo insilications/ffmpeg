@@ -123,6 +123,8 @@ gmp-dev
 gmp-staticdev
 gnutls
 gnutls-dev
+gobject-introspection
+gobject-introspection-dev
 googletest
 googletest-dev
 graphite
