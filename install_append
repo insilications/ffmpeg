@@ -1,2 +1,4 @@
 make libffmpeg V=1 VERBOSE=1
 make install-libffmpeg V=1 VERBOSE=1 DESTDIR=%{buildroot}
+install -dm 0755 %{buildroot}/usr/lib64/haswell/ || :
+cp --archive %{buildroot}/usr/lib64/lib*.so* %{buildroot}/usr/lib64/haswell/ || :
