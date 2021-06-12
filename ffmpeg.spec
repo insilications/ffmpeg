@@ -62,6 +62,7 @@ BuildRequires : brotli-staticdev
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-configure
 BuildRequires : buildreq-distutils3
+BuildRequires : buildreq-meson
 BuildRequires : buildreq-qmake
 BuildRequires : bzip2
 BuildRequires : bzip2-dev
@@ -71,6 +72,8 @@ BuildRequires : ca-certs-static
 BuildRequires : cairo
 BuildRequires : cairo-dev
 BuildRequires : cairo-lib
+BuildRequires : cairomm-dev
+BuildRequires : cairomm-staticdev
 BuildRequires : cmake
 BuildRequires : compat-gcc-10
 BuildRequires : compat-gcc-10-dev
@@ -92,6 +95,7 @@ BuildRequires : elfutils-dev
 BuildRequires : evtest
 BuildRequires : expat-dev
 BuildRequires : expat-staticdev
+BuildRequires : fftw
 BuildRequires : fftw-dev
 BuildRequires : fftw-staticdev
 BuildRequires : findutils
@@ -117,6 +121,9 @@ BuildRequires : gcc-libubsan
 BuildRequires : gcc-locale
 BuildRequires : gdb
 BuildRequires : gdb-dev
+BuildRequires : gdk-pixbuf
+BuildRequires : gdk-pixbuf-dev
+BuildRequires : gdk-pixbuf-staticdev
 BuildRequires : gettext
 BuildRequires : glib
 BuildRequires : glib-bin
@@ -140,6 +147,8 @@ BuildRequires : gmp-dev
 BuildRequires : gmp-staticdev
 BuildRequires : gnutls
 BuildRequires : gnutls-dev
+BuildRequires : gobject-introspection
+BuildRequires : gobject-introspection-dev
 BuildRequires : googletest
 BuildRequires : googletest-dev
 BuildRequires : graphite
@@ -150,7 +159,10 @@ BuildRequires : gsm-dev
 BuildRequires : gsm-staticdev
 BuildRequires : gstreamer-dev
 BuildRequires : gtk+-data
+BuildRequires : gtk+-dev
 BuildRequires : gtk+-lib
+BuildRequires : gtk-doc
+BuildRequires : gtk-doc-dev
 BuildRequires : gtk3-dev
 BuildRequires : gtk3-lib
 BuildRequires : gtk4
@@ -310,6 +322,8 @@ BuildRequires : libva
 BuildRequires : libva-dev
 BuildRequires : libva-intel-driver
 BuildRequires : libva-lib
+BuildRequires : libva-vdpau-driver-chromium
+BuildRequires : libva-vdpau-driver-chromium-dev
 BuildRequires : libvapoursynth
 BuildRequires : libvapoursynth-bin
 BuildRequires : libvapoursynth-dev
@@ -361,6 +375,7 @@ BuildRequires : mesa
 BuildRequires : mesa-demos
 BuildRequires : mesa-dev
 BuildRequires : mesa-lib
+BuildRequires : mm-common
 BuildRequires : mm-common-dev
 BuildRequires : nasm
 BuildRequires : nasm-bin
@@ -559,6 +574,8 @@ BuildRequires : pkgconfig(libunwind-ptrace)
 BuildRequires : pkgconfig(libunwind-setjmp)
 BuildRequires : pkgconfig(libusb-1.0)
 BuildRequires : pkgconfig(libva)
+BuildRequires : pkgconfig(libva-glx)
+BuildRequires : pkgconfig(libva-x11)
 BuildRequires : pkgconfig(libwebp)
 BuildRequires : pkgconfig(libwebpdecoder)
 BuildRequires : pkgconfig(libwebpdemux)
@@ -877,7 +894,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1622807804
+export SOURCE_DATE_EPOCH=1623533879
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -913,14 +930,38 @@ export MAKEFLAGS=%{?_smp_mflags}
 #
 export CCACHE_DISABLE=true
 #
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/usr/nvidia/lib64/xorg/modules/drivers:/usr/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/dri:/usr/lib64/haswell:/usr/lib64:/usr/lib:/usr/share"
+#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/usr/nvidia/lib64/xorg/modules/drivers:/usr/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/dri:/usr/lib64/haswell:/usr/lib64:/usr/lib:/usr/share"
 #
-export LIBRARY_PATH="$LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/usr/nvidia/lib64/xorg/modules/drivers:/usr/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/dri:/usr/lib64/haswell:/usr/lib64:/usr/lib:/usr/share"
+#export LIBRARY_PATH="$LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/usr/nvidia/lib64/xorg/modules/drivers:/usr/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/dri:/usr/lib64/haswell:/usr/lib64:/usr/lib:/usr/share"
 #
-export PATH="$PATH:/usr/local/cuda/bin:/usr/nvidia/bin:/usr/bin/haswell:/usr/bin:/usr/sbin"
+#export PATH="$PATH:/usr/local/cuda/bin:/usr/nvidia/bin:/usr/bin/haswell:/usr/bin:/usr/sbin"
 #
 #export CPATH="$CPATH:/usr/local/cuda/include"
 #
+export DISPLAY=:0
+export __GL_ALLOW_UNOFFICIAL_PROTOCOL=1
+export __GL_SYNC_TO_VBLANK=0
+export __GL_SYNC_DISPLAY_DEVICE=DFP-1
+export VDPAU_NVIDIA_SYNC_DISPLAY_DEVICE=DFP-1
+export LANG=en_US.UTF-8
+export XDG_CONFIG_DIRS=/usr/share/xdg:/etc/xdg
+export XDG_SEAT=seat0
+export XDG_SESSION_TYPE=tty
+export XDG_CURRENT_DESKTOP=KDE
+export XDG_SESSION_CLASS=user
+export XDG_VTNR=1
+export XDG_SESSION_ID=1
+export XDG_RUNTIME_DIR=/run/user/1000
+export XDG_DATA_DIRS=/usr/local/share:/usr/share
+export KDE_SESSION_VERSION=5
+export KDE_SESSION_UID=1000
+export KDE_FULL_SESSION=true
+export KDE_APPLICATIONS_AS_SCOPE=1
+export VDPAU_DRIVER=nvidia
+export LIBVA_DRIVER_NAME=vdpau
+export LIBVA_DRIVERS_PATH=/usr/lib64/dri
+export GTK_RC_FILES=/etc/gtk/gtkrc
+export FONTCONFIG_PATH=/usr/share/defaults/fonts
 ## altflags_pgo end
 if [ ! -f statuspgo ]; then
 echo PGO Phase 1
@@ -1068,7 +1109,7 @@ timeout 16 ./ffplay -autoexit -ss 01:00:00 -t 00:00:14 -i '/opt/TDEP/stuff/video
 timeout 16 ./ffplay -autoexit -ss 00:40:00 -t 00:00:14 -i '/opt/TDEP/stuff/videos/movies/Parasite.Gisaengchung.2019.1080p.BluRay.FLAC.x264-BeiTai.mkv'
 timeout 16 ./ffplay -autoexit -ss 00:40:00 -t 00:00:14 -i '/opt/TDEP/stuff/videos/movies/Parasite.Gisaengchung.2019.1080p.BluRay.FLAC.x264-BeiTai.mkv' -vcodec h264_cuvid
 # xvfb-run --server-args="-screen 0 1920x1080x24+32"
-make clean
+make clean || :
 echo USED > statuspgo
 fi
 if [ -f statuspgo ]; then
@@ -1207,12 +1248,14 @@ fi
 
 
 %install
-export SOURCE_DATE_EPOCH=1622807804
+export SOURCE_DATE_EPOCH=1623533879
 rm -rf %{buildroot}
 %make_install
 ## install_append content
 make libffmpeg V=1 VERBOSE=1
 make install-libffmpeg V=1 VERBOSE=1 DESTDIR=%{buildroot}
+install -dm 0755 %{buildroot}/usr/lib64/haswell/ || :
+cp --archive %{buildroot}/usr/lib64/lib*.so* %{buildroot}/usr/lib64/haswell/ || :
 ## install_append end
 
 %files
