@@ -28,13 +28,14 @@ export MAKEFLAGS=%{?_smp_mflags}
 #
 export CCACHE_DISABLE=true
 #
-#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/usr/nvidia/lib64/xorg/modules/drivers:/usr/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/dri:/usr/lib64/haswell:/usr/lib64:/usr/lib:/usr/share"
-#
-#export LIBRARY_PATH="$LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/usr/nvidia/lib64/xorg/modules/drivers:/usr/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/dri:/usr/lib64/haswell:/usr/lib64:/usr/lib:/usr/share"
-#
-#export PATH="$PATH:/usr/local/cuda/bin:/usr/nvidia/bin:/usr/bin/haswell:/usr/bin:/usr/sbin"
-#
-#export CPATH="$CPATH:/usr/local/cuda/include"
+export LD_LIBRARY_PATH
+export LIBRARY_PATH
+export PATH
+export CPATH
+echo $LD_LIBRARY_PATH
+echo $LIBRARY_PATH
+echo $PATH
+echo $CPATH
 #
 export DISPLAY=:0
 export __GL_ALLOW_UNOFFICIAL_PROTOCOL=1
