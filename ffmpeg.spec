@@ -894,7 +894,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1623557285
+export SOURCE_DATE_EPOCH=1623558469
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -1097,7 +1097,8 @@ export LDFLAGS="${LDFLAGS_GENERATE}"
     --enable-zlib \
     --extra-cflags="-I/usr/local/cuda/include" \
     --nvccflags="-O3 -Xptxas -O3,-v -cudart=static -ccbin=/usr/bin/gcc-10 -Xcompiler -O3,-static,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-flto=16,-fuse-linker-plugin,-ffat-lto-objects,-fasynchronous-unwind-tables -Xlinker -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static -Xarchive -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static" \
-    --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib64/vdpau -L/usr/lib64/dri -L/usr/local/cuda/lib64"
+    --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib64/vdpau -L/usr/lib64/dri -L/usr/local/cuda/lib64" \
+    --extra-libs="/usr/local/cuda/lib64/libcublasLt_static.a /usr/local/cuda/lib64/libcublas_static.a /usr/local/cuda/lib64/libcudadevrt.a /usr/local/cuda/lib64/libcudart_static.a /usr/local/cuda/lib64/libcufft_static_nocallback.a /usr/local/cuda/lib64/libcufftw_static.a /usr/local/cuda/lib64/libculibos.a /usr/local/cuda/lib64/libcurand_static.a /usr/local/cuda/lib64/libcusolver_static.a /usr/local/cuda/lib64/libcusparse_static.a /usr/local/cuda/lib64/liblapack_static.a /usr/local/cuda/lib64/libmetis_static.a /usr/local/cuda/lib64/libnvjpeg_static.a"
 ## make_prepend content
 echo 'include $(SRC_PATH)/ffbuild/libffmpeg.mak' >> Makefile
 ## make_prepend end
@@ -1246,7 +1247,8 @@ export LDFLAGS="${LDFLAGS_USE}"
     --enable-zlib \
     --extra-cflags="-I/usr/local/cuda/include" \
     --nvccflags="-O3 -Xptxas -O3,-v -cudart=static -ccbin=/usr/bin/gcc-10 -Xcompiler -O3,-static,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-flto=16,-fuse-linker-plugin,-ffat-lto-objects,-fasynchronous-unwind-tables -Xlinker -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static -Xarchive -flto=16,-fuse-linker-plugin,-ffat-lto-objects,-march=native,-mtune=native,-static-libstdc++,-static-libgcc,-static" \
-    --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib64/vdpau -L/usr/lib64/dri -L/usr/local/cuda/lib64"
+    --extra-ldflags="-L/usr/nvidia/lib64 -L/usr/nvidia/lib64/vdpau -L/usr/lib64/dri -L/usr/local/cuda/lib64" \
+    --extra-libs="/usr/local/cuda/lib64/libcublasLt_static.a /usr/local/cuda/lib64/libcublas_static.a /usr/local/cuda/lib64/libcudadevrt.a /usr/local/cuda/lib64/libcudart_static.a /usr/local/cuda/lib64/libcufft_static_nocallback.a /usr/local/cuda/lib64/libcufftw_static.a /usr/local/cuda/lib64/libculibos.a /usr/local/cuda/lib64/libcurand_static.a /usr/local/cuda/lib64/libcusolver_static.a /usr/local/cuda/lib64/libcusparse_static.a /usr/local/cuda/lib64/liblapack_static.a /usr/local/cuda/lib64/libmetis_static.a /usr/local/cuda/lib64/libnvjpeg_static.a"
 ## make_prepend content
 echo 'include $(SRC_PATH)/ffbuild/libffmpeg.mak' >> Makefile
 ## make_prepend end
@@ -1257,7 +1259,7 @@ fi
 
 
 %install
-export SOURCE_DATE_EPOCH=1623557285
+export SOURCE_DATE_EPOCH=1623558469
 rm -rf %{buildroot}
 %make_install
 ## install_append content
