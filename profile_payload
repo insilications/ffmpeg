@@ -1,11 +1,10 @@
 exit 1
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/usr/nvidia/lib64/xorg/modules/drivers:/usr/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/dri:/usr/lib64/haswell:/usr/lib64:/usr/lib:/usr/share"
-export LIBRARY_PATH="$LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/usr/nvidia/lib64/xorg/modules/drivers:/usr/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/dri:/usr/lib64/haswell:/usr/lib64:/usr/lib:/usr/share"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/usr/nvidia/lib64/xorg/modules/drivers:/usr/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/dri:/usr/lib64/haswell:/usr/lib64:/usr/lib64/pulseaudio:/usr/lib:/usr/share"
+export LIBRARY_PATH="$LIBRARY_PATH:/usr/nvidia/lib64:/usr/nvidia/lib64/vdpau:/usr/nvidia/lib64/xorg/modules/drivers:/usr/nvidia/lib64/xorg/modules/extensions:/usr/local/cuda/lib64:/usr/lib64/dri:/usr/lib64/haswell:/usr/lib64:/usr/lib64/pulseaudio:/usr/lib:/usr/share"
 export PATH="$PATH:/usr/local/cuda/bin:/usr/nvidia/bin:/usr/bin/haswell:/usr/bin:/usr/sbin"
 export CPATH="$CPATH:/usr/local/cuda/include"
 #
 export DISPLAY=:0
-export __GL_ALLOW_UNOFFICIAL_PROTOCOL=1
 export __GL_SYNC_TO_VBLANK=0
 export __GL_SYNC_DISPLAY_DEVICE=DFP-1
 export VDPAU_NVIDIA_SYNC_DISPLAY_DEVICE=DFP-1
@@ -29,11 +28,35 @@ export LIBVA_DRIVERS_PATH=/usr/lib64/dri
 export GTK_RC_FILES=/etc/gtk/gtkrc
 export FONTCONFIG_PATH=/usr/share/defaults/fonts
 #
+./ffmpeg -hide_banner -h encoder=h264_nvenc
+
 ./ffmpeg -i '/opt/fprofile/harry.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
 ./ffmpeg -i '/opt/fprofile/harry2.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
 ./ffmpeg -i '/opt/fprofile/eyes.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
 ./ffmpeg -i '/opt/fprofile/allied.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
 ./ffmpeg -i '/opt/fprofile/gerra.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
+
+
+./ffmpeg -loglevel debug -threads 1 -hwaccel nvdec -hwaccel_output_format cuda -i '/opt/fprofile/harry.y4m' -filter:v scale_npp=w=1920:h=1080:interp_algo=lanczos -c:v h264_nvenc -b:v 4M -maxrate:v 5M -bufsize:v 8M -profile:v main -level:v 4.1 -rc:v vbr_hq -rc-lookahead:v 32 -refs:v 16 -bf:v 3 -coder:v cabac -c:a libfdk_aac -b:a 256k -f mp4 '/dev/null'
+./ffmpeg -loglevel debug -threads 1 -hwaccel nvdec -hwaccel_output_format cuda -i '/opt/fprofile/harry.y4m' -c:v h264_nvenc -b:v 4M -maxrate:v 5M -bufsize:v 8M -profile:v main -level:v 4.1 -rc:v vbr_hq -rc-lookahead:v 32 -refs:v 16 -bf:v 3 -coder:v cabac -c:a libfdk_aac -b:a 256k -f mp4 '/dev/null'
+./ffmpeg -loglevel debug -threads 1 -hwaccel nvdec -i '/opt/fprofile/harry.y4m' -c:v h264_nvenc -b:v 4M -maxrate:v 5M -bufsize:v 8M -profile:v main -level:v 4.1 -rc:v vbr_hq -rc-lookahead:v 32 -refs:v 16 -bf:v 3 -coder:v cabac -c:a libfdk_aac -b:a 256k -f mp4 '/dev/null'
+
+./ffmpeg -loglevel debug -threads 1 -hwaccel nvdec -hwaccel_output_format cuda -i '/opt/fprofile/harry.y4m' -c:v h264_nvenc -preset:v slow -b:v 4M -maxrate:v 5M -bufsize:v 8M -profile:v main -level:v 4.1 -rc:v vbr_hq -rc-lookahead:v 32 -spatial_aq:v 1 -aq-strength:v 15 -coder:v cabac -c:a aac -bsf:a aac_adtstoasc -b:a 256k -fflags +genpts -async 1 -vsync 1 -movflags +faststart -f mp4 '/dev/null'
+
+
+./ffmpeg -y -loglevel debug -threads 1 -hwaccel nvdec -hwaccel_output_format cuda -i '/opt/fprofile/harry.y4m' -c:v h264_nvenc -rc:v constqp -tune:v hq -preset:v p7 -qp:v 19 -b:v 0 -f mp4 '/dev/null'
+
+
+ffmpeg -y -i dnce.mkv -vf 'hwupload_cuda=0,yadif_cuda=0:-1:0,scale_cuda=w=1920:h=1080' -c:v h264_nvenc -rc:v constqp -tune:v hq -preset:v p7 -qp:v 19 -b:v 0 -c:a copy nv-test-8.ts
+
+ffmpeg -y -vsync 0 -hwaccel cuda -hwaccel_output_format cuda -i input.mp4 -c:a copy -c:v h264_nvenc -b:v 5M output1.mp4
+
+ffmpeg -hide_banner -i rtmp://localhost:1935/live/stream -c:v h264_nvenc -cbr true -b:v 6M -preset slow -c:a copy -gpu
+
+-filter:v "scale_npp=w=1920:h=1080:interp_algo=lanczos"
+
+ffmpeg -y -vsync 1 -c:v h264_cuvid -c:a libfdk_aac -i "/shawnlane/stuff/videos/p/Pack/Kiss 6 Sandee Westgate, Brandi Love, Bethany Benz, Kate England Ryan Madison  Porn Fidelity [2016 DVDRip].mp4" -c:v libx264 -preset slow -tune film -profile:v high -crf 22 -bf 3 -threads 16 -c:a libfdk_aac -bsf:a aac_adtstoasc -b:a 256k -fflags +genpts -async 1 -vsync 1 -movflags +faststart "/shawnlane/stuff/videos/p/Pack/Kiss 6 Sandee Westgate, Brandi Love, Bethany Benz, Kate England Ryan Madison  Porn Fidelity [2016 DVDRip] 2.mp4"
+
 timeout 16 ./ffplay -autoexit -t 00:00:14 -i '/opt/TDEP/downloads/rips/pp/Slim4K - Passionate FFM three-way fuck scene/slim4k-passionate-ffm-three-way-fuck-scene_1080p.mp4' -vcodec h264_cuvid
 timeout 16 ./ffplay -autoexit -t 00:00:14 -i '/opt/TDEP/downloads/rips/pp/Slim4K - Passionate FFM three-way fuck scene/slim4k-passionate-ffm-three-way-fuck-scene_1080p.mp4'
 timeout 16 ./ffplay -autoexit -t 00:00:14 -i '/opt/TDEP/stuff/videos/movies/Mad Max Fury Road 2015 UltraHD BluRay 2160p HEVC BT2020 TrueHD 7 1 Atmos-HDLeader/Mad.Max.Fury.Road.2015.UltraHD.BluRay.2160p.HEVC.BT2020.TrueHD 7.1.Atmos-HDLeader.mkv'
