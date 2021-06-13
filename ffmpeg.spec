@@ -894,7 +894,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1623556158
+export SOURCE_DATE_EPOCH=1623557285
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -1102,10 +1102,10 @@ export LDFLAGS="${LDFLAGS_GENERATE}"
 echo 'include $(SRC_PATH)/ffbuild/libffmpeg.mak' >> Makefile
 ## make_prepend end
 ## make_macro content
-exit 1
 make -j16 V=1 VERBOSE=1
 ## make_macro end
 
+exit 1
 ./ffmpeg -i '/opt/fprofile/harry.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
 ./ffmpeg -i '/opt/fprofile/harry2.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
 ./ffmpeg -i '/opt/fprofile/eyes.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
@@ -1251,14 +1251,13 @@ export LDFLAGS="${LDFLAGS_USE}"
 echo 'include $(SRC_PATH)/ffbuild/libffmpeg.mak' >> Makefile
 ## make_prepend end
 ## make_macro content
-exit 1
 make -j16 V=1 VERBOSE=1
 ## make_macro end
 fi
 
 
 %install
-export SOURCE_DATE_EPOCH=1623556158
+export SOURCE_DATE_EPOCH=1623557285
 rm -rf %{buildroot}
 %make_install
 ## install_append content
