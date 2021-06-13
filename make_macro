@@ -1,2 +1,1 @@
-exit 1
 make -j16 V=1 VERBOSE=1

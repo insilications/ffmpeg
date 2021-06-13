@@ -1,3 +1,4 @@
+exit 1
 ./ffmpeg -i '/opt/fprofile/harry.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
 ./ffmpeg -i '/opt/fprofile/harry2.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
 ./ffmpeg -i '/opt/fprofile/eyes.y4m' -y -vcodec h264_nvenc -preset slow -rc vbr_hq -cq 12 -qmin 12 -qmax 12 -f mp4 '/dev/null'
